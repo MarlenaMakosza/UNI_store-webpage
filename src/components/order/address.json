@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_order_addresses",
+  "info": {
+    "name": "Address",
+    "displayName": "Address",
+    "icon": "pinMap",
+    "description": "Shipping or billing address"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string",
+      "required": true
+    },
+    "buildingNumber": {
+      "type": "string",
+      "required": true
+    },
+    "apartmentNumber": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "postalCode": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "default": "Poland"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

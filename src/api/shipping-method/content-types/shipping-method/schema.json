@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shipping_methods",
+  "info": {
+    "singularName": "shipping-method",
+    "pluralName": "shipping-methods",
+    "displayName": "Shipping Method",
+    "description": "Shipping methods available for orders (InPost, DPD, UPS, etc.)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "provider": {
+      "type": "enumeration",
+      "enum": [
+        "inpost",
+        "dpd",
+        "ups",
+        "dhl",
+        "poczta_polska",
+        "courier",
+        "pickup"
+      ],
+      "required": true
+    },
+    "cost": {
+      "type": "decimal",
+      "required": true
+    },
+    "freeShippingThreshold": {
+      "type": "decimal"
+    },
+    "estimatedDays": {
+      "type": "integer"
+    },
+    "minEstimatedDays": {
+      "type": "integer"
+    },
+    "maxEstimatedDays": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "trackingUrl": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "requiresAddress": {
+      "type": "boolean",
+      "default": true
+    },
+    "maxWeight": {
+      "type": "decimal"
+    },
+    "maxDimensions": {
+      "type": "json"
+    }
+  }
+}
