@@ -37,7 +37,13 @@ export interface StrapiMediaFormat {
 export interface StrapiResponseData<T> {
   id: number;
   documentId: string;
-  attributes: T;
+  attributes?: T; // Make optional for backward compatibility
+}
+
+// Strapi 5 flat response (no attributes wrapper)
+export type StrapiResponseDataFlat<T> = T & {
+  id: number;
+  documentId: string;
 }
 
 export interface StrapiResponse<T> {

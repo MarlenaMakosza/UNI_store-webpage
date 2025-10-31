@@ -14,17 +14,18 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
-  const { attributes } = product;
+  console.log('ProductCard rendering:', product);
 
-  if (!attributes) {
-    return null;
-  }
+  // Support both Strapi 4 (with attributes) and Strapi 5 (flat structure)
+  const data = product.attributes || (product as any);
 
-  const mainImageUrl = attributes.images?.data?.[0]?.attributes?.url
-    ? getStrapiMediaUrl(attributes.images.data[0].attributes.url)
+  console.log('Product data:', data);
+
+  const mainImageUrl = data.images?.data?.[0]?.attributes?.url
+    ? getStrapiMediaUrl(data.images.data[0].attributes.url)
     : null;
-  const discount = calculateDiscount(attributes.price, attributes.compareAtPrice);
-  const stockStatus = getStockStatus(attributes.stock, attributes.stock);
+  const discount = calculateDiscount(data.price, data.compareAtPrice);
+  const stockStatus = getStockStatus(data.stock, data.stock);
   const isOutOfStock = stockStatus === 'out-of-stock';
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -36,12 +37,12 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
 
   return (
     <div className="group relative bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-neon-violet transition-all duration-300">
-      <Link href={`/products/${attributes.slug}`}>
+      <Link href={`/products/${data.slug}`}>
         <div className="relative aspect-square overflow-hidden bg-gray-800">
           {mainImageUrl ? (
             <Image
               src={mainImageUrl}
-              alt={attributes.images?.data?.[0]?.attributes?.alternativeText || attributes.name}
+              alt={data.images?.data?.[0]?.attributes?.alternativeText || data.name}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -58,7 +59,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             </div>
           )}
 
-          {attributes.featured && (
+          {data.featured && (
             <div className="absolute top-2 left-2 bg-electric-blue text-white px-2 py-1 rounded-md text-xs font-bold">
               Wyróżnione
             </div>
@@ -66,29 +67,29 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         </div>
 
         <div className="p-4">
-          {attributes.brand?.data && (
+          {data.brand?.data && (
             <p className="text-xs text-gray-400 mb-1">
-              {attributes.brand.data.attributes.name}
+              {data.brand.data.attributes?.name || data.brand.data.name}
             </p>
           )}
 
           <h3 className="font-semibold text-white mb-2 line-clamp-2 group-hover:text-neon-violet transition-colors">
-            {attributes.name}
+            {data.name}
           </h3>
 
-          {attributes.shortDescription && (
+          {data.shortDescription && (
             <p className="text-sm text-gray-400 line-clamp-2 mb-3">
-              {attributes.shortDescription}
+              {data.shortDescription}
             </p>
           )}
 
           <div className="flex items-baseline space-x-2 mb-3">
             <span className="text-xl font-bold text-white">
-              {formatPrice(attributes.price)}
+              {formatPrice(data.price)}
             </span>
-            {attributes.compareAtPrice && (
+            {data.compareAtPrice && (
               <span className="text-sm text-gray-500 line-through">
-                {formatPrice(attributes.compareAtPrice)}
+                {formatPrice(data.compareAtPrice)}
               </span>
             )}
           </div>
@@ -106,8 +107,8 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
               {getStockStatusText(stockStatus)}
             </span>
 
-            {attributes.sku && (
-              <span className="text-xs text-gray-500">SKU: {attributes.sku}</span>
+            {data.sku && (
+              <span className="text-xs text-gray-500">SKU: {data.sku}</span>
             )}
           </div>
         </div>

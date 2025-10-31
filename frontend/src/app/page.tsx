@@ -40,17 +40,18 @@ export default function HomePage() {
     const product = featuredProducts.data.find((p) => p.documentId === documentId);
     if (!product) return;
 
-    const { attributes } = product;
-    const imageUrl = attributes.images?.data?.[0]?.attributes?.url || null;
+    // Support both Strapi 4 and Strapi 5 structure
+    const data = product.attributes || (product as any);
+    const imageUrl = data.images?.data?.[0]?.attributes?.url || null;
 
     addItem({
       productId,
       documentId,
-      name: attributes.name,
-      slug: attributes.slug,
-      price: attributes.price,
+      name: data.name,
+      slug: data.slug,
+      price: data.price,
       image: imageUrl,
-      stock: attributes.stock,
+      stock: data.stock,
     });
   };
 
