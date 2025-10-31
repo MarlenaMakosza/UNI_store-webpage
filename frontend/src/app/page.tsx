@@ -42,7 +42,8 @@ export default function HomePage() {
 
     // Support both Strapi 4 and Strapi 5 structure
     const data = product.attributes || (product as any);
-    const imageUrl = data.images?.data?.[0]?.attributes?.url || null;
+    const firstImage = data.images?.[0] || data.images?.data?.[0];
+    const imageUrl = firstImage?.url || firstImage?.attributes?.url || null;
 
     addItem({
       productId,

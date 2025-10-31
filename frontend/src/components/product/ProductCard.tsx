@@ -20,10 +20,12 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
   const data = product.attributes || (product as any);
 
   console.log('Product data:', data);
+  console.log('Images:', data.images);
 
-  const mainImageUrl = data.images?.data?.[0]?.attributes?.url
-    ? getStrapiMediaUrl(data.images.data[0].attributes.url)
-    : null;
+  // Strapi 5 returns images as flat array, not data.attributes structure
+  const firstImage = data.images?.[0] || data.images?.data?.[0];
+  const mainImageUrl = firstImage?.url || firstImage?.attributes?.url;
+  const imageUrl = mainImageUrl ? getStrapiMediaUrl(mainImageUrl) : null;
   const discount = calculateDiscount(data.price, data.compareAtPrice);
   const stockStatus = getStockStatus(data.stock, data.stock);
   const isOutOfStock = stockStatus === 'out-of-stock';
@@ -39,10 +41,10 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
     <div className="group relative bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-neon-violet transition-all duration-300">
       <Link href={`/products/${data.slug}`}>
         <div className="relative aspect-square overflow-hidden bg-gray-800">
-          {mainImageUrl ? (
+          {imageUrl ? (
             <Image
-              src={mainImageUrl}
-              alt={data.images?.data?.[0]?.attributes?.alternativeText || data.name}
+              src={imageUrl}
+              alt={firstImage?.alternativeText || data.name}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
