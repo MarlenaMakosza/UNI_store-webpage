@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -56,6 +56,23 @@ const banners: Banner[] = [
 
 export default function BannerCarousel() {
   const swiperRef = useRef<SwiperType | null>(null);
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsLight(document.documentElement.classList.contains('light'));
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -96,12 +113,22 @@ export default function BannerCarousel() {
             <SwiperSlide key={banner.id}>
               <a
                 href={banner.href}
-                className="block relative overflow-hidden rounded-[20px] bg-[#0D0D0D] h-[300px] md:h-[400px] group cursor-pointer"
+                className={`block relative overflow-hidden rounded-[20px] h-[300px] md:h-[400px] group cursor-pointer ${
+                  isLight ? 'bg-white' : 'bg-[#0D0D0D]'
+                }`}
                 style={{
-                  boxShadow: '0 10px 40px rgba(138, 43, 226, 0.3)',
+                  boxShadow: isLight
+                    ? '0 10px 40px rgba(0, 0, 0, 0.08)'
+                    : '0 10px 40px rgba(138, 43, 226, 0.3)',
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8A2BE2]/20 via-transparent to-[#3F8EFC]/20" />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${
+                    isLight
+                      ? 'from-[#8A2BE2]/5 via-transparent to-[#3F8EFC]/5'
+                      : 'from-[#8A2BE2]/20 via-transparent to-[#3F8EFC]/20'
+                  }`}
+                />
 
                 <div className="absolute top-10 -left-10 w-64 h-64 bg-[#8A2BE2]/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-10 -right-10 w-64 h-64 bg-[#3F8EFC]/10 rounded-full blur-3xl" />
@@ -121,15 +148,21 @@ export default function BannerCarousel() {
                     </div>
 
                     <h2
-                      className="text-3xl md:text-5xl font-extrabold text-white leading-tight"
+                      className={`text-3xl md:text-5xl font-extrabold leading-tight ${
+                        isLight ? 'text-[#1a1a1a]' : 'text-white'
+                      }`}
                       style={{
-                        textShadow: '0 4px 20px rgba(138, 43, 226, 0.5)',
+                        textShadow: isLight ? 'none' : '0 4px 20px rgba(138, 43, 226, 0.5)',
                       }}
                     >
                       {banner.title}
                     </h2>
 
-                    <p className="text-base md:text-xl text-[#b0b0b0] max-w-xl">
+                    <p
+                      className={`text-base md:text-xl max-w-xl ${
+                        isLight ? 'text-[#555555]' : 'text-[#b0b0b0]'
+                      }`}
+                    >
                       {banner.text}
                     </p>
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ThemeScript from '@/components/ui/ThemeScript';
 
 export const metadata: Metadata = {
   title: 'MAKOSZA - Sklep z elektroniką',
@@ -15,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        <ThemeScript />
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         <div className="flex flex-col min-h-screen">
           <Header />

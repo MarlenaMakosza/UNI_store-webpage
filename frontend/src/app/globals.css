@@ -7,6 +7,53 @@
   --foreground: #FFFFFF;
 }
 
+.light {
+  --background: #FFFFFF;
+  --foreground: #0D0D0D;
+}
+
+/* Light mode overrides */
+.light body {
+  background: #FFFFFF;
+  color: #0D0D0D;
+}
+
+.light .bg-deep-black {
+  background: #FFFFFF !important;
+}
+
+.light .bg-gray-900 {
+  background: #F3F4F6 !important;
+}
+
+.light .bg-gray-800 {
+  background: #E5E7EB !important;
+}
+
+.light .border-gray-800 {
+  border-color: #D1D5DB !important;
+}
+
+.light .text-white {
+  color: #0D0D0D !important;
+}
+
+.light .text-gray-300 {
+  color: #4B5563 !important;
+}
+
+.light .text-gray-400 {
+  color: #6B7280 !important;
+}
+
+.light .text-gray-500 {
+  color: #9CA3AF !important;
+}
+
+.light .bg-gradient-to-br.from-deep-black {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 25%, #F3F4F6 50%, #F9FAFB 75%, #FFFFFF 100%) !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
