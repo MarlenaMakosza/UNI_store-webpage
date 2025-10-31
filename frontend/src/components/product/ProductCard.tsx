@@ -15,7 +15,14 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
   const { attributes } = product;
-  const mainImageUrl = getStrapiMediaUrl(attributes.images?.data?.[0]?.attributes?.url);
+
+  if (!attributes) {
+    return null;
+  }
+
+  const mainImageUrl = attributes.images?.data?.[0]?.attributes?.url
+    ? getStrapiMediaUrl(attributes.images.data[0].attributes.url)
+    : null;
   const discount = calculateDiscount(attributes.price, attributes.compareAtPrice);
   const stockStatus = getStockStatus(attributes.stock, attributes.stock);
   const isOutOfStock = stockStatus === 'out-of-stock';
