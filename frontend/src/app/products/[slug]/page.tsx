@@ -28,7 +28,11 @@ export default function ProductDetailPage() {
         const response = await getProduct(slug);
         setProduct(response);
 
-        const mainImageUrl = getStrapiMediaUrl(response.data.attributes.images?.data?.[0]?.attributes?.url);
+        // Support Strapi 5 flat structure
+        const data = response.data.attributes || (response.data as any);
+        const firstImage = data.images?.[0] || data.images?.data?.[0];
+        const imageUrl = firstImage?.url || firstImage?.attributes?.url;
+        const mainImageUrl = imageUrl ? getStrapiMediaUrl(imageUrl) : null;
         setSelectedImage(mainImageUrl);
         setError(null);
       } catch (err) {
@@ -63,24 +67,26 @@ export default function ProductDetailPage() {
     );
   }
 
-  const { attributes } = product.data;
-  const discount = calculateDiscount(attributes.price, attributes.compareAtPrice);
-  const stockStatus = getStockStatus(attributes.stock, attributes.stock);
+  // Support Strapi 5 flat structure
+  const data = product.data.attributes || (product.data as any);
+  const discount = calculateDiscount(data.price, data.compareAtPrice);
+  const stockStatus = getStockStatus(data.stock, data.stock);
   const isOutOfStock = stockStatus === 'out-of-stock';
 
-  const allImages = attributes.images?.data || [];
+  const allImages = data.images || data.images?.data || [];
 
   const handleAddToCart = () => {
-    const imageUrl = attributes.images?.data?.[0]?.attributes?.url || null;
+    const firstImage = data.images?.[0] || data.images?.data?.[0];
+    const imageUrl = firstImage?.url || firstImage?.attributes?.url || null;
 
     addItem({
       productId: String(product.data.id),
       documentId: product.data.documentId,
-      name: attributes.name,
-      slug: attributes.slug,
-      price: attributes.price,
+      name: data.name,
+      slug: data.slug,
+      price: data.price,
       image: imageUrl,
-      stock: attributes.stock,
+      stock: data.stock,
     });
   };
 
@@ -98,7 +104,7 @@ export default function ProductDetailPage() {
               {selectedImage ? (
                 <Image
                   src={selectedImage}
-                  alt={attributes.name}
+                  alt={data.name}
                   fill
                   className="object-cover"
                   priority
@@ -119,7 +125,8 @@ export default function ProductDetailPage() {
             {allImages.length > 1 && (
               <div className="grid grid-cols-4 gap-2">
                 {allImages.map((img: any, index: number) => {
-                  const imageUrl = getStrapiMediaUrl(img.attributes?.url);
+                  const imgUrl = img?.url || img?.attributes?.url;
+                  const imageUrl = imgUrl ? getStrapiMediaUrl(imgUrl) : null;
                   if (!imageUrl) return null;
 
                   return (
@@ -134,7 +141,7 @@ export default function ProductDetailPage() {
                     >
                       <Image
                         src={imageUrl}
-                        alt={`${attributes.name} - zdjęcie ${index + 1}`}
+                        alt={`${data.name} - zdjęcie ${index + 1}`}
                         fill
                         className="object-cover"
                       />
@@ -146,33 +153,33 @@ export default function ProductDetailPage() {
           </div>
 
           <div>
-            {attributes.brand?.data && (
+            {data.brand?.data && (
               <p className="text-sm text-gray-400 mb-2">
-                {attributes.brand.data.attributes.name}
+                {data.brand.data.attributes?.name || data.brand.data.name}
               </p>
             )}
 
             <h1 className="text-4xl font-bold text-white mb-4">
-              {attributes.name}
+              {data.name}
             </h1>
 
-            {attributes.category?.data && (
+            {data.category?.data && (
               <div className="flex flex-wrap gap-2 mb-4">
                 <span
                   className="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded"
                 >
-                  {attributes.category.data.attributes.name}
+                  {data.category.data.attributes?.name || data.category.data.name}
                 </span>
               </div>
             )}
 
             <div className="flex items-baseline space-x-3 mb-6">
               <span className="text-4xl font-bold text-white">
-                {formatPrice(attributes.price)}
+                {formatPrice(data.price)}
               </span>
-              {attributes.compareAtPrice && (
+              {data.compareAtPrice && (
                 <span className="text-xl text-gray-500 line-through">
-                  {formatPrice(attributes.compareAtPrice)}
+                  {formatPrice(data.compareAtPrice)}
                 </span>
               )}
             </div>
@@ -189,8 +196,8 @@ export default function ProductDetailPage() {
               >
                 {getStockStatusText(stockStatus)}
               </span>
-              {attributes.sku && (
-                <span className="text-sm text-gray-500">SKU: {attributes.sku}</span>
+              {data.sku && (
+                <span className="text-sm text-gray-500">SKU: {data.sku}</span>
               )}
             </div>
 
@@ -205,21 +212,20 @@ export default function ProductDetailPage() {
               {isOutOfStock ? 'Niedostępny' : 'Dodaj do koszyka'}
             </Button>
 
-            {attributes.description && (
+            {data.marketingDescription && (
               <div className="border-t border-gray-800 pt-6">
                 <h2 className="text-xl font-semibold text-white mb-4">Opis produktu</h2>
-                <div
-                  className="text-gray-300 prose prose-invert max-w-none"
-                  dangerouslySetInnerHTML={{ __html: attributes.description }}
-                />
+                <div className="text-gray-300 whitespace-pre-line">
+                  {data.marketingDescription}
+                </div>
               </div>
             )}
 
-            {attributes.technicalSpecs && attributes.technicalSpecs.length > 0 && (
+            {data.technicalSpecs && data.technicalSpecs.length > 0 && (
               <div className="border-t border-gray-800 pt-6 mt-6">
                 <h2 className="text-xl font-semibold text-white mb-4">Specyfikacja techniczna</h2>
                 <dl className="space-y-2">
-                  {attributes.technicalSpecs.map((spec, index) => (
+                  {data.technicalSpecs.map((spec: any, index: number) => (
                     <div key={index} className="flex justify-between py-2 border-b border-gray-800">
                       <dt className="text-gray-400">{spec.name}</dt>
                       <dd className="text-white font-medium">{spec.value}</dd>
