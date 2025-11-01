@@ -1,9 +1,9 @@
 # 🚀 Deployment Guide - Mikrus VPS
 
 Instrukcja wdrożenia projektu na VPS Mikrus pod adresem:
-- **Frontend**: https://marlenamakosza.com/studies/internet-marketing
-- **Backend API**: https://marlenamakosza.com/api
-- **Admin Panel**: https://marlenamakosza.com/admin
+- **Frontend**: https://marlenamakosza.com/projects/internet-marketing
+- **Backend API**: https://marlenamakosza.com/projects/internet-marketing/api
+- **Admin Panel**: https://marlenamakosza.com/projects/internet-marketing/admin
 
 ---
 
@@ -15,6 +15,29 @@ Instrukcja wdrożenia projektu na VPS Mikrus pod adresem:
 - Node.js 18+ (zainstalowany na serwerze)
 - Nginx (zainstalowany na serwerze)
 - PM2 (do zarządzania procesami Node.js)
+
+---
+
+## 🔐 Uwaga o Admin Panelu
+
+**Admin panel jest publicznie dostępny pod adresem `/projects/internet-marketing/admin`, ale jest bezpieczny dzięki:**
+
+1. **Rate limiting** - maksymalnie 5 prób logowania na minutę (ochrona przed brute force)
+2. **HTTPS** - szyfrowane połączenie (Let's Encrypt)
+3. **Silne hasło** - minimum 16 znaków, losowe znaki
+4. **Strapi built-in security** - haszowanie haseł, JWT tokeny
+5. **Opcjonalnie IP whitelist** - można ograniczyć dostęp tylko do Twojego IP
+
+**Dlaczego warto wystawić admin publicznie:**
+- Możesz zarządzać sklepem z dowolnego miejsca (telefon, laptop, praca)
+- Nie musisz konfigurować VPN
+- Możesz szybko dodać produkty lub edytować treści
+- Strapi ma wbudowane zabezpieczenia na poziomie enterprise
+
+**Kiedy NIE wystawiać admina:**
+- Jeśli nie masz menedżera haseł i używasz słabych haseł
+- Jeśli planujesz bardzo rzadko edytować treści (wtedy lepiej SSH + tunel)
+- Jeśli chcesz maksymalnego bezpieczeństwa kosztem wygody
 
 ---
 
@@ -106,8 +129,8 @@ TRANSFER_TOKEN_SALT=wygeneruj-losowy-salt
 JWT_SECRET=wygeneruj-losowy-jwt-secret
 ENCRYPTION_KEY=wygeneruj-losowy-klucz
 
-# Dodaj URL produkcyjny
-URL=https://marlenamakosza.com
+# Dodaj URL produkcyjny z ścieżką projektu
+URL=https://marlenamakosza.com/projects/internet-marketing
 ```
 
 **Wygeneruj bezpieczne klucze:**
@@ -137,7 +160,8 @@ nano .env.local
 **Edytuj `.env.local`:**
 
 ```env
-NEXT_PUBLIC_API_URL=https://marlenamakosza.com/api
+NEXT_PUBLIC_API_URL=https://marlenamakosza.com/projects/internet-marketing/api
+NEXT_PUBLIC_BASE_PATH=/projects/internet-marketing
 ```
 
 **Zainstaluj zależności i zbuduj frontend:**
@@ -176,9 +200,20 @@ pm2 save
 # Skopiuj plik konfiguracji
 sudo cp nginx-site.conf /etc/nginx/sites-available/marlenamakosza.com
 
-# Zaktualizuj ścieżki do certyfikatów SSL w pliku
+# WAŻNE: Sprawdź czy ścieżka do Twojej głównej strony jest poprawna
+# W pliku jest ustawione: root /var/www/test;
+# Jeśli Twoja strona jest w innym miejscu, edytuj:
 sudo nano /etc/nginx/sites-available/marlenamakosza.com
+# Znajdź linijkę "root /var/www/test;" i zmień na swoją ścieżkę
 ```
+
+**WAŻNE zmiany w konfiguracji Nginx:**
+- Admin panel dostępny pod: `/projects/internet-marketing/admin`
+- API dostępne pod: `/projects/internet-marketing/api`
+- Frontend dostępny pod: `/projects/internet-marketing`
+- **Rate limiting** dla admin panelu: max 5 zapytań/minutę (ochrona przed brute force)
+- Opcjonalne: IP whitelist dla admina (odkomentuj linijki 37-39 i dodaj swoje IP)
+- **Root website**: Twoja główna strona pod `/` (domyślnie `/var/www/test`)
 
 ### 3.2. Zainstaluj SSL certyfikat (Let's Encrypt)
 
@@ -232,9 +267,20 @@ sudo ufw status
 ### 4.2. Zabezpiecz Strapi Admin Panel
 
 Po pierwszym uruchomieniu:
-1. Odwiedź: https://marlenamakosza.com/admin
+1. Odwiedź: https://marlenamakosza.com/projects/internet-marketing/admin
 2. Stwórz konto administratora
-3. **WAŻNE**: Zapisz dane logowania w bezpiecznym miejscu
+3. **WAŻNE**: Zapisz dane logowania w bezpiecznym miejscu (używaj menedżera haseł!)
+
+**Dodatkowe zabezpieczenia admina:**
+- Rate limiting już skonfigurowany (max 5 prób logowania/minutę)
+- Używaj **silnego hasła** (minimum 16 znaków, losowe)
+- Opcjonalnie: Ogranicz dostęp do swojego IP (edytuj nginx config - linijki 34-36)
+  ```bash
+  sudo nano /etc/nginx/sites-available/marlenamakosza.com
+  # Odkomentuj i dodaj swoje IP:
+  # allow 123.456.789.0;  # Twoje IP z domu/pracy
+  # deny all;
+  ```
 
 ---
 
@@ -306,16 +352,18 @@ cp .tmp/data.db .tmp/data.db.backup-$(date +%Y%m%d)
 
 Po deployment sprawdź:
 
-1. **Frontend**: https://marlenamakosza.com/studies/internet-marketing
+1. **Frontend**: https://marlenamakosza.com/projects/internet-marketing
    - Strona powinna się załadować
    - Theme toggle powinien działać
    - Banery powinny się wyświetlać
+   - Produkty powinny być widoczne
 
-2. **Backend API**: https://marlenamakosza.com/api
+2. **Backend API**: https://marlenamakosza.com/projects/internet-marketing/api
    - Powinna zwrócić JSON z informacjami o API
 
-3. **Admin Panel**: https://marlenamakosza.com/admin
+3. **Admin Panel**: https://marlenamakosza.com/projects/internet-marketing/admin
    - Panel logowania powinien być dostępny
+   - Stwórz konto administratora przy pierwszym logowaniu
 
 4. **PM2 Status**:
    ```bash

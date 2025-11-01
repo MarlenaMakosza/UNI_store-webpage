@@ -23,7 +23,8 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3000,
-        NEXT_PUBLIC_API_URL: 'https://marlenamakosza.com/api',
+        NEXT_PUBLIC_API_URL: 'https://marlenamakosza.com/projects/internet-marketing/api',
+        NEXT_PUBLIC_BASE_PATH: '/projects/internet-marketing',
       },
       instances: 1,
       autorestart: true,

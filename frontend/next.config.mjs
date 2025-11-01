@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/studies/internet-marketing',
-  assetPrefix: '/studies/internet-marketing',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '/projects/internet-marketing',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '/projects/internet-marketing',
   trailingSlash: true,
   images: {
     remotePatterns: [
@@ -14,12 +14,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'marlenamakosza.com',
-        pathname: '/api/uploads/**',
+        pathname: '/projects/internet-marketing/uploads/**',
       },
     ],
   },
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337/api',
   },
   output: 'standalone',
 };
