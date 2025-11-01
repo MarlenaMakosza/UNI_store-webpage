@@ -14,45 +14,216 @@ interface Banner {
   id: number;
   badge: string;
   title: string;
+  highlight: string;
   text: string;
   cta: string;
-  icon: string;
-  iconAnimation: string;
   href: string;
+  type: 'gaming' | 'payment' | 'delivery';
 }
 
 const banners: Banner[] = [
   {
     id: 1,
     badge: '🔥 HOT DEAL',
-    title: 'POWER UP YOUR GEAR!',
+    title: 'POWER UP\nYOUR ',
+    highlight: 'GEAR!',
     text: 'Zgarnij do -30% na myszki, klawiatury i słuchawki gamingowe',
     cta: 'Kup teraz →',
-    icon: '🎮',
-    iconAnimation: 'animate-float',
     href: '/products',
+    type: 'gaming',
   },
   {
     id: 2,
     badge: '💳 0% OPROCENTOWANIA',
-    title: 'KUP TERAZ PŁAĆ PÓŹNIEJ',
+    title: 'KUP TERAZ\nPŁAĆ ',
+    highlight: 'PÓŹNIEJ',
     text: 'Odroczona płatność do 12 miesięcy bez dodatkowych kosztów',
     cta: 'Zobacz warunki →',
-    icon: '💎',
-    iconAnimation: 'animate-pulse-custom',
     href: '#',
+    type: 'payment',
   },
   {
     id: 3,
     badge: '🚚 DARMOWA USŁUGA',
-    title: 'DOSTAWA GRATIS!',
+    title: 'DOSTAWA\n',
+    highlight: 'GRATIS!',
     text: 'Darmowy transport + wniesienie przy zakupach powyżej 500 zł',
     cta: 'Sprawdź ofertę →',
-    icon: '📦',
-    iconAnimation: 'animate-slide',
     href: '/products',
+    type: 'delivery',
   },
 ];
+
+const GamingVisual = ({ isLight }: { isLight: boolean }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div
+      className={`w-[350px] lg:w-[450px] h-[250px] lg:h-[300px] rounded-[20px] p-5 lg:p-6 flex flex-col gap-4 border-2 transition-all duration-300 ${
+        isLight
+          ? 'bg-gradient-to-br from-[#8A2BE2]/5 to-[#3F8EFC]/5 border-[#8A2BE2]/15'
+          : 'bg-gradient-to-br from-[#8A2BE2]/10 to-[#3F8EFC]/10 border-[#8A2BE2]/30'
+      }`}
+      style={{
+        boxShadow: isLight
+          ? '0 15px 40px rgba(138, 43, 226, 0.15)'
+          : '0 20px 50px rgba(138, 43, 226, 0.3)',
+      }}
+    >
+      <div className="flex gap-3 lg:gap-4">
+        {[
+          { icon: '🎮', label: 'Myszki' },
+          { icon: '⌨️', label: 'Klawiatury' },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className={`flex-1 rounded-xl p-4 flex flex-col items-center gap-2 border-2 transition-all duration-300 hover:-translate-y-1 ${
+              isLight
+                ? 'bg-white border-[#8A2BE2]/20 hover:bg-[#8A2BE2]/5 hover:border-[#8A2BE2]/40'
+                : 'bg-white/5 border-[#8A2BE2]/40 hover:bg-[#8A2BE2]/15 hover:border-[#8A2BE2]/60'
+            }`}
+            style={{
+              boxShadow: isLight ? '0 5px 15px rgba(0, 0, 0, 0.05)' : 'none',
+            }}
+          >
+            <div
+              className="w-12 lg:w-14 h-12 lg:h-14 rounded-lg flex items-center justify-center text-2xl lg:text-3xl"
+              style={{
+                background: 'linear-gradient(135deg, #8A2BE2, #3F8EFC)',
+                boxShadow: '0 5px 15px rgba(138, 43, 226, 0.25)',
+              }}
+            >
+              {item.icon}
+            </div>
+            <span
+              className={`text-[10px] lg:text-xs font-semibold uppercase tracking-wide ${
+                isLight ? 'text-[#1a1a1a]' : 'text-white'
+              }`}
+            >
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="flex gap-3 lg:gap-4">
+        {[
+          { icon: '🎧', label: 'Słuchawki' },
+          { icon: '🖥️', label: 'Monitory' },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className={`flex-1 rounded-xl p-4 flex flex-col items-center gap-2 border-2 transition-all duration-300 hover:-translate-y-1 ${
+              isLight
+                ? 'bg-white border-[#8A2BE2]/20 hover:bg-[#8A2BE2]/5 hover:border-[#8A2BE2]/40'
+                : 'bg-white/5 border-[#8A2BE2]/40 hover:bg-[#8A2BE2]/15 hover:border-[#8A2BE2]/60'
+            }`}
+            style={{
+              boxShadow: isLight ? '0 5px 15px rgba(0, 0, 0, 0.05)' : 'none',
+            }}
+          >
+            <div
+              className="w-12 lg:w-14 h-12 lg:h-14 rounded-lg flex items-center justify-center text-2xl lg:text-3xl"
+              style={{
+                background: 'linear-gradient(135deg, #8A2BE2, #3F8EFC)',
+                boxShadow: '0 5px 15px rgba(138, 43, 226, 0.25)',
+              }}
+            >
+              {item.icon}
+            </div>
+            <span
+              className={`text-[10px] lg:text-xs font-semibold uppercase tracking-wide ${
+                isLight ? 'text-[#1a1a1a]' : 'text-white'
+              }`}
+            >
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const PaymentVisual = () => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div
+      className="w-[300px] lg:w-[380px] h-[190px] lg:h-[240px] rounded-[20px] p-6 lg:p-8 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #8A2BE2, #3F8EFC)',
+        boxShadow: '0 20px 50px rgba(138, 43, 226, 0.3)',
+      }}
+    >
+      <div
+        className="absolute w-48 h-48 rounded-full top-[-100px] right-[-50px]"
+        style={{ background: 'rgba(255, 255, 255, 0.15)' }}
+      />
+      <div
+        className="w-12 h-10 rounded-lg mb-8 lg:mb-10 relative z-10"
+        style={{
+          background: 'linear-gradient(135deg, #f4d03f, #f39c12)',
+          boxShadow: '0 3px 10px rgba(0, 0, 0, 0.2)',
+        }}
+      />
+      <div
+        className="text-white text-xl lg:text-2xl font-semibold tracking-[3px] mb-4 lg:mb-5"
+        style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)' }}
+      >
+        •••• •••• •••• ••••
+      </div>
+      <div className="flex justify-between text-white text-sm">
+        <div>
+          <div className="text-[10px] lg:text-[11px] opacity-90">WAŻNA DO</div>
+          <div className="font-semibold">12/27</div>
+        </div>
+        <div className="text-right">
+          <div className="text-[10px] lg:text-[11px] opacity-90">0% RATA</div>
+          <div className="font-semibold text-base lg:text-lg">12 M-CY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const DeliveryVisual = ({ isLight }: { isLight: boolean }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <div className="flex gap-4 lg:gap-5">
+      {[
+        { icon: '🚚', label: 'Darmowy\nTransport' },
+        { icon: '🏠', label: 'Wniesienie\ndo domu' },
+        { icon: '✅', label: 'Całkowicie\nGratis' },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className={`w-24 lg:w-[130px] rounded-2xl p-5 lg:p-7 flex flex-col items-center gap-3 lg:gap-4 border-2 transition-all duration-300 hover:-translate-y-2 ${
+            isLight
+              ? 'bg-white border-[#8A2BE2]/20 hover:bg-[#8A2BE2]/5 hover:border-[#8A2BE2]/40'
+              : 'bg-white/5 border-[#8A2BE2]/40 hover:bg-[#8A2BE2]/15 hover:border-[#8A2BE2]/60'
+          }`}
+          style={{
+            boxShadow: isLight
+              ? '0 5px 15px rgba(0, 0, 0, 0.05)'
+              : '0 10px 30px rgba(138, 43, 226, 0.2)',
+          }}
+        >
+          <div
+            className="w-14 lg:w-[70px] h-14 lg:h-[70px] rounded-xl flex items-center justify-center text-3xl lg:text-4xl"
+            style={{
+              background: 'linear-gradient(135deg, #8A2BE2, #3F8EFC)',
+              boxShadow: '0 5px 20px rgba(138, 43, 226, 0.25)',
+            }}
+          >
+            {item.icon}
+          </div>
+          <span
+            className={`text-[10px] lg:text-[13px] font-semibold text-center uppercase tracking-wide leading-tight whitespace-pre-line ${
+              isLight ? 'text-[#1a1a1a]' : 'text-white'
+            }`}
+          >
+            {item.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default function BannerCarousel() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -88,8 +259,21 @@ export default function BannerCarousel() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const renderVisual = (type: Banner['type']) => {
+    switch (type) {
+      case 'gaming':
+        return <GamingVisual isLight={isLight} />;
+      case 'payment':
+        return <PaymentVisual />;
+      case 'delivery':
+        return <DeliveryVisual isLight={isLight} />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <section className="py-8 md:py-12 bg-deep-black">
+    <section className={`py-8 md:py-12 ${isLight ? 'bg-[#f5f5f5]' : 'bg-deep-black'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -113,34 +297,42 @@ export default function BannerCarousel() {
             <SwiperSlide key={banner.id}>
               <a
                 href={banner.href}
-                className={`block relative overflow-hidden rounded-[20px] h-[300px] md:h-[400px] group cursor-pointer ${
+                className={`block relative overflow-hidden rounded-[20px] h-[400px] group cursor-pointer transition-all duration-300 ${
                   isLight ? 'bg-white' : 'bg-[#0D0D0D]'
                 }`}
                 style={{
                   boxShadow: isLight
                     ? '0 10px 40px rgba(0, 0, 0, 0.08)'
-                    : '0 10px 40px rgba(138, 43, 226, 0.3)',
+                    : '0 20px 60px rgba(138, 43, 226, 0.3)',
                 }}
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${
-                    isLight
-                      ? 'from-[#8A2BE2]/5 via-transparent to-[#3F8EFC]/5'
-                      : 'from-[#8A2BE2]/20 via-transparent to-[#3F8EFC]/20'
-                  }`}
+                  className="absolute w-[600px] h-[600px] rounded-full pointer-events-none top-[-200px] right-[-100px]"
+                  style={{
+                    background: isLight
+                      ? 'radial-gradient(circle, rgba(138, 43, 226, 0.08) 0%, transparent 70%)'
+                      : 'radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%)',
+                  }}
+                />
+                <div
+                  className="absolute w-[400px] h-[400px] rounded-full pointer-events-none bottom-[-150px] left-[-50px]"
+                  style={{
+                    background: isLight
+                      ? 'radial-gradient(circle, rgba(63, 142, 252, 0.06) 0%, transparent 70%)'
+                      : 'radial-gradient(circle, rgba(63, 142, 252, 0.12) 0%, transparent 70%)',
+                  }}
                 />
 
-                <div className="absolute top-10 -left-10 w-64 h-64 bg-[#8A2BE2]/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-10 -right-10 w-64 h-64 bg-[#3F8EFC]/10 rounded-full blur-3xl" />
-
-                <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-8 md:py-12 gap-8">
-                  <div className="flex-1 text-center md:text-left space-y-4 md:space-y-6 z-10">
+                <div className="relative h-full flex flex-col md:flex-row items-center justify-between px-8 md:px-16 lg:px-20 py-10 md:py-12 gap-8">
+                  <div className="flex-1 text-center md:text-left space-y-4 md:space-y-5 z-10 max-w-[600px]">
                     <div className="inline-block">
                       <span
-                        className="inline-block px-4 py-2 rounded-full text-sm font-bold text-white"
+                        className="inline-block px-5 py-2 rounded-full text-sm font-bold text-white uppercase tracking-wide"
                         style={{
-                          background: 'linear-gradient(135deg, #8A2BE2 0%, #3F8EFC 100%)',
-                          boxShadow: '0 4px 15px rgba(138, 43, 226, 0.4)',
+                          background: 'linear-gradient(90deg, #8A2BE2 0%, #3F8EFC 100%)',
+                          boxShadow: isLight
+                            ? '0 4px 15px rgba(138, 43, 226, 0.25)'
+                            : '0 4px 15px rgba(138, 43, 226, 0.4)',
                         }}
                       >
                         {banner.badge}
@@ -148,18 +340,24 @@ export default function BannerCarousel() {
                     </div>
 
                     <h2
-                      className={`text-3xl md:text-5xl font-extrabold leading-tight ${
+                      className={`text-4xl md:text-5xl lg:text-[56px] font-black leading-tight whitespace-pre-line ${
                         isLight ? 'text-[#1a1a1a]' : 'text-white'
                       }`}
                       style={{
-                        textShadow: isLight ? 'none' : '0 4px 20px rgba(138, 43, 226, 0.5)',
+                        textShadow: isLight ? 'none' : '0 0 30px rgba(138, 43, 226, 0.5)',
                       }}
                     >
                       {banner.title}
+                      <span
+                        className="bg-gradient-to-r from-[#8A2BE2] to-[#3F8EFC] bg-clip-text text-transparent"
+                        style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                      >
+                        {banner.highlight}
+                      </span>
                     </h2>
 
                     <p
-                      className={`text-base md:text-xl max-w-xl ${
+                      className={`text-lg md:text-xl leading-relaxed ${
                         isLight ? 'text-[#555555]' : 'text-[#b0b0b0]'
                       }`}
                     >
@@ -167,25 +365,20 @@ export default function BannerCarousel() {
                     </p>
 
                     <button
-                      className="inline-block px-8 py-4 rounded-full text-white font-bold text-lg transition-all duration-300 transform hover:-translate-y-1"
+                      className="inline-block px-10 py-4 rounded-full text-white font-bold text-lg uppercase tracking-wide transition-all duration-300 transform hover:-translate-y-1"
                       style={{
-                        background: 'linear-gradient(135deg, #8A2BE2 0%, #3F8EFC 100%)',
-                        boxShadow: '0 6px 25px rgba(138, 43, 226, 0.4)',
+                        background: 'linear-gradient(90deg, #8A2BE2 0%, #3F8EFC 100%)',
+                        boxShadow: isLight
+                          ? '0 8px 25px rgba(138, 43, 226, 0.3)'
+                          : '0 10px 30px rgba(138, 43, 226, 0.4)',
                       }}
                     >
                       {banner.cta}
                     </button>
                   </div>
 
-                  <div className="flex-shrink-0 z-10">
-                    <div
-                      className={`text-[80px] md:text-[120px] ${banner.iconAnimation}`}
-                      style={{
-                        filter: 'drop-shadow(0 0 30px rgba(138, 43, 226, 0.6))',
-                      }}
-                    >
-                      {banner.icon}
-                    </div>
+                  <div className="relative z-10 w-full md:w-[500px] h-[280px] md:h-[350px] flex-shrink-0">
+                    {renderVisual(banner.type)}
                   </div>
                 </div>
               </a>
