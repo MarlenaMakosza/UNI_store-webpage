@@ -5,7 +5,7 @@ export default function ThemeScript() {
         __html: `
           (function() {
             try {
-              var theme = localStorage.getItem('theme') || 'dark';
+              var theme = localStorage.getItem('theme') || 'light';
               if (theme === 'light') {
                 document.documentElement.classList.add('light');
               }
