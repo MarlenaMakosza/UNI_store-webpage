@@ -35,15 +35,25 @@ export default function Footer() {
                   Kategorie
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-neon-violet text-sm transition-colors">
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">Kontakt</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li>Email: kontakt@makosza.pl</li>
-              <li>Telefon: +48 123 456 789</li>
-              <li>Adres: ul. Przykładowa 1, Warszawa</li>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-electric-blue text-sm transition-colors">
+                  Formularz kontaktowy
+                </Link>
+              </li>
+              <li className="text-gray-400 text-sm">Email: kontakt@makosza.pl</li>
+              <li className="text-gray-400 text-sm">Telefon: +48 123 456 789</li>
+              <li className="text-gray-400 text-sm">Adres: ul. Przykładowa 1, Warszawa</li>
             </ul>
           </div>
         </div>

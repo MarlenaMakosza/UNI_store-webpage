@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_messages",
+  "info": {
+    "singularName": "contact-message",
+    "pluralName": "contact-messages",
+    "displayName": "Contact Message",
+    "description": "Messages from contact form"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 255
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 9,
+      "maxLength": 20
+    },
+    "subject": {
+      "type": "string",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 255
+    },
+    "message": {
+      "type": "text",
+      "required": true,
+      "minLength": 10
+    },
+    "sendCopy": {
+      "type": "boolean",
+      "default": false
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    },
+    "replied": {
+      "type": "boolean",
+      "default": false
+    },
+    "ipAddress": {
+      "type": "string"
+    }
+  }
+}
