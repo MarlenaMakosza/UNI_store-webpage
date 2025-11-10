@@ -184,7 +184,7 @@ const PaymentVisual = () => (
 
 const DeliveryVisual = ({ isLight }: { isLight: boolean }) => (
   <div className="w-full h-full flex items-center justify-center">
-    <div className="flex gap-4 lg:gap-5">
+    <div className="flex gap-6">
       {[
         { icon: '🚚', label: 'Darmowy\nTransport' },
         { icon: '🏠', label: 'Wniesienie\ndo domu' },
@@ -192,19 +192,19 @@ const DeliveryVisual = ({ isLight }: { isLight: boolean }) => (
       ].map((item, i) => (
         <div
           key={i}
-          className={`w-24 lg:w-[130px] rounded-2xl p-5 lg:p-7 flex flex-col items-center gap-3 lg:gap-4 border-2 transition-all duration-300 hover:-translate-y-2 ${
+          className={`w-[170px] rounded-2xl p-10 px-6 flex flex-col items-center gap-5 border-[3px] transition-all duration-300 hover:-translate-y-2 ${
             isLight
-              ? 'bg-white border-[#8A2BE2]/20 hover:bg-[#8A2BE2]/5 hover:border-[#8A2BE2]/40'
+              ? 'bg-white border-[#8A2BE2]/25 hover:bg-[#8A2BE2]/5 hover:border-[#8A2BE2]/40'
               : 'bg-white/5 border-[#8A2BE2]/40 hover:bg-[#8A2BE2]/15 hover:border-[#8A2BE2]/60'
           }`}
           style={{
             boxShadow: isLight
               ? '0 5px 15px rgba(0, 0, 0, 0.05)'
-              : '0 10px 30px rgba(138, 43, 226, 0.2)',
+              : '0 10px 25px rgba(138, 43, 226, 0.2)',
           }}
         >
           <div
-            className="w-14 lg:w-[70px] h-14 lg:h-[70px] rounded-xl flex items-center justify-center text-3xl lg:text-4xl"
+            className="w-[95px] h-[95px] rounded-[15px] flex items-center justify-center text-5xl"
             style={{
               background: 'linear-gradient(135deg, #8A2BE2, #3F8EFC)',
               boxShadow: '0 5px 20px rgba(138, 43, 226, 0.25)',
@@ -213,7 +213,7 @@ const DeliveryVisual = ({ isLight }: { isLight: boolean }) => (
             {item.icon}
           </div>
           <span
-            className={`text-[10px] lg:text-[13px] font-semibold text-center uppercase tracking-wide leading-tight whitespace-pre-line ${
+            className={`text-base font-semibold text-center uppercase tracking-wide leading-snug whitespace-pre-line ${
               isLight ? 'text-[#1a1a1a]' : 'text-white'
             }`}
           >
