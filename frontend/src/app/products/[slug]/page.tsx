@@ -98,6 +98,11 @@ export default function ProductDetailPage() {
           Wróć do produktów
         </Link>
 
+        {/* Product Title */}
+        <h1 className="text-4xl font-bold text-white mb-6">
+          {data.name}
+        </h1>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <div className="relative aspect-square bg-gray-900 rounded-lg overflow-hidden mb-4">
@@ -159,12 +164,8 @@ export default function ProductDetailPage() {
               </p>
             )}
 
-            <h1 className="text-4xl font-bold text-white mb-4">
-              {data.name}
-            </h1>
-
             {data.category?.data && (
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-6">
                 <span
                   className="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded"
                 >
@@ -173,14 +174,23 @@ export default function ProductDetailPage() {
               </div>
             )}
 
-            <div className="flex items-baseline space-x-3 mb-6">
-              <span className="text-4xl font-bold text-white">
-                {formatPrice(data.price)}
-              </span>
-              {data.compareAtPrice && (
-                <span className="text-xl text-gray-500 line-through">
-                  {formatPrice(data.compareAtPrice)}
+            <div className="bg-gradient-to-r from-neon-violet/10 to-electric-blue/10 border border-neon-violet/30 rounded-lg p-6 mb-6">
+              <div className="flex items-baseline space-x-3">
+                <span className="text-5xl font-bold text-neon-violet">
+                  {formatPrice(data.price)}
                 </span>
+                {data.compareAtPrice && (
+                  <span className="text-xl text-gray-500 line-through">
+                    {formatPrice(data.compareAtPrice)}
+                  </span>
+                )}
+              </div>
+              {data.compareAtPrice && (
+                <div className="mt-2">
+                  <span className="text-sm text-electric-blue font-semibold">
+                    Oszczędzasz {formatPrice(data.compareAtPrice - data.price)} ({calculateDiscount(data.price, data.compareAtPrice)}%)
+                  </span>
+                </div>
               )}
             </div>
 

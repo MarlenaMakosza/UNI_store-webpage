@@ -1,0 +1,49 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy to Production Server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            # Navigate to project directory
+            cd ${{ secrets.PROJECT_PATH }}
+
+            # Pull latest changes
+            echo "📥 Pulling latest changes from GitHub..."
+            git pull origin master
+
+            # Install/update backend dependencies
+            echo "📦 Installing backend dependencies..."
+            npm install --production=false
+
+            # Install/update frontend dependencies
+            echo "📦 Installing frontend dependencies..."
+            cd frontend
+            npm install --production=false
+            cd ..
+
+            # Restart services with PM2
+            echo "🔄 Restarting services..."
+            pm2 restart ecosystem.config.js
+
+            # Save PM2 process list
+            pm2 save
+
+            echo "✅ Deployment completed successfully!"

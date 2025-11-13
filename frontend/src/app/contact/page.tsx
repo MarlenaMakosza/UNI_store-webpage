@@ -28,20 +28,7 @@ export default function ContactPage() {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Form - 2/3 width */}
-            <div className="lg:col-span-2">
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 md:p-8">
-                <h2 className="text-2xl font-bold text-white mb-2">
-                  Formularz kontaktowy
-                </h2>
-                <p className="text-gray-400 mb-6">
-                  Wypełnij formularz poniżej, a my skontaktujemy się z Tobą najszybciej jak to możliwe.
-                </p>
-                <ContactForm />
-              </div>
-            </div>
-
-            {/* Contact Info Sidebar - 1/3 width */}
+            {/* Contact Info Sidebar - LEFT - 1/3 width */}
             <div className="space-y-6">
               {/* Zasada 1: Zdjęcie osoby odpowiedzialnej za kontakt */}
               <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
@@ -50,10 +37,10 @@ export default function ContactPage() {
                 </h3>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-neon-violet to-electric-blue flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white">AM</span>
+                    <span className="text-2xl font-bold text-white">MM</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Anna Makosza</p>
+                    <p className="font-semibold text-white">Marlena Mąkosza</p>
                     <p className="text-sm text-gray-400">Dział obsługi klienta</p>
                   </div>
                 </div>
@@ -209,6 +196,19 @@ export default function ContactPage() {
                     </a>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            {/* Contact Form - RIGHT - 2/3 width */}
+            <div className="lg:col-span-2">
+              <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-white mb-2">
+                  Formularz kontaktowy
+                </h2>
+                <p className="text-gray-400 mb-6">
+                  Wypełnij formularz poniżej, a my skontaktujemy się z Tobą najszybciej jak to możliwe.
+                </p>
+                <ContactForm />
               </div>
             </div>
           </div>

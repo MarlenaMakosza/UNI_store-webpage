@@ -1,13 +1,13 @@
 module.exports = {
   apps: [
     {
-      name: 'strapi-backend',
+      name: 'strapi',
       cwd: './',
       script: 'npm',
-      args: 'start',
+      args: 'run develop',
       env: {
-        NODE_ENV: 'production',
-        HOST: '127.0.0.1',
+        NODE_ENV: 'development',
+        HOST: '0.0.0.0',
         PORT: 1337,
       },
       instances: 1,
@@ -16,20 +16,19 @@ module.exports = {
       max_memory_restart: '1G',
     },
     {
-      name: 'nextjs-frontend',
+      name: 'nextjs',
       cwd: './frontend',
       script: 'npm',
-      args: 'start',
+      args: 'run dev',
       env: {
-        NODE_ENV: 'production',
+        NODE_ENV: 'development',
         PORT: 3000,
-        NEXT_PUBLIC_API_URL: 'https://marlenamakosza.com/projects/internet-marketing/api',
-        NEXT_PUBLIC_BASE_PATH: '/projects/internet-marketing',
+        NEXT_PUBLIC_STRAPI_URL: 'http://5.175.140.38:1337',
       },
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '500M',
     },
   ],
 };

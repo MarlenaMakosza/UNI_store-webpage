@@ -12,6 +12,12 @@ const nextConfig = {
         pathname: '/uploads/**',
       },
       {
+        protocol: 'http',
+        hostname: '5.175.140.38',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+      {
         protocol: 'https',
         hostname: 'marlenamakosza.com',
         pathname: '/projects/internet-marketing/uploads/**',
