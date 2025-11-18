@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold bg-gradient-to-r from-neon-violet to-electric-blue bg-clip-text text-transparent mb-4">
-              MAKOSZA
+              TechNest
             </h3>
             <p className="text-gray-400 text-sm">
               Twój sklep z elektroniką najwyższej jakości.
@@ -51,7 +51,7 @@ export default function Footer() {
                   Formularz kontaktowy
                 </Link>
               </li>
-              <li className="text-gray-400 text-sm">Email: kontakt@makosza.pl</li>
+              <li className="text-gray-400 text-sm">Email: kontakt@technest.pl</li>
               <li className="text-gray-400 text-sm">Telefon: +48 123 456 789</li>
               <li className="text-gray-400 text-sm">Adres: ul. Przykładowa 1, Warszawa</li>
             </ul>
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} MAKOSZA. Wszelkie prawa zastrzeżone.
+            &copy; {currentYear} TechNest. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

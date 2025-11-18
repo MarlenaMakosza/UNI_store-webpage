@@ -11,7 +11,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-2xl font-bold bg-gradient-to-r from-neon-violet to-electric-blue bg-clip-text text-transparent">
-                MAKOSZA
+                TechNest
               </span>
             </Link>
           </div>

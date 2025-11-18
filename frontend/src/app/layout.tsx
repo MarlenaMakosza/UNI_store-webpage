@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import ThemeScript from '@/components/ui/ThemeScript';
 
 export const metadata: Metadata = {
-  title: 'MAKOSZA - Sklep z elektroniką',
+  title: 'TechNest - Sklep z elektroniką',
   description: 'Twój sklep z elektroniką najwyższej jakości. Oferujemy szeroką gamę produktów w konkurencyjnych cenach.',
 };
 

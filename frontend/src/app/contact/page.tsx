@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin, Clock } fr
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Kontakt - Makosza Electronics',
+  title: 'Kontakt - TechNest',
   description: 'Skontaktuj się z nami. Jesteśmy dostępni od poniedziałku do piątku w godzinach 9:00-17:00.',
 };
 
@@ -60,10 +60,10 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm text-gray-400">E-mail</p>
                       <a
-                        href="mailto:kontakt@makosza-electronics.pl"
+                        href="mailto:kontakt@technest.pl"
                         className="text-white hover:text-neon-violet transition-colors"
                       >
-                        kontakt@makosza-electronics.pl
+                        kontakt@technest.pl
                       </a>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
                 <div className="mt-6 pt-6 border-t border-gray-800">
                   <p className="text-sm text-gray-400 mb-2">Dane firmowe</p>
-                  <p className="text-white text-sm">Makosza Electronics Sp. z o.o.</p>
+                  <p className="text-white text-sm">TechNest Sp. z o.o.</p>
                   <p className="text-white text-sm">NIP: 123-456-78-90</p>
                   <p className="text-white text-sm">REGON: 123456789</p>
                 </div>
