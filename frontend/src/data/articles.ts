@@ -13,6 +13,18 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: 1,
+    slug: 'technest-infografika',
+    title: 'TechNest w liczbach',
+    subtitle: 'Poznaj nasze osiągnięcia i ofertę',
+    excerpt:
+      'Odkryj TechNest w pigułce! Zobacz naszą infografikę przedstawiającą najważniejsze informacje o naszym sklepie, ofercie i osiągnięciach.',
+    publishedAt: '2025-01-03',
+    category: 'O nas',
+    featuredImage: '📊',
+    htmlFile: 'technest-infografika.html',
+  },
+  {
+    id: 2,
     slug: 'poznaj-technest',
     title: 'Poznaj TechNest',
     subtitle: 'Twoje gniazdo w świecie technologii',
@@ -24,7 +36,7 @@ export const articles: Article[] = [
     htmlFile: 'poznaj-technest-reklama.html',
   },
   {
-    id: 2,
+    id: 3,
     slug: 'witaj-w-technest',
     title: 'Witaj w TechNest!',
     subtitle: 'Twoje konto zostało pomyślnie utworzone',
@@ -36,7 +48,7 @@ export const articles: Article[] = [
     htmlFile: 'witaj-w-technest.html',
   },
   {
-    id: 3,
+    id: 4,
     slug: 'dzien-informatyka-2025',
     title: 'Dzień Informatyka w TechNest',
     subtitle: 'Świętujemy technologię i pasję!',
@@ -48,7 +60,7 @@ export const articles: Article[] = [
     htmlFile: 'dzien-informatyka.html',
   },
   {
-    id: 4,
+    id: 5,
     slug: 'mega-wyprzedaz-ostatnie-sztuki',
     title: 'Mega Wyprzedaż - Ostatnie sztuki!',
     subtitle: 'Ostatnie sztuki w niebywałych cenach!',

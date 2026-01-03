@@ -170,7 +170,7 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <a
-                      href="/shipping"
+                      href="/dostawa"
                       className="text-gray-300 hover:text-electric-blue transition-colors text-sm flex items-center gap-2"
                     >
                       <span className="w-1 h-1 bg-electric-blue rounded-full"></span>

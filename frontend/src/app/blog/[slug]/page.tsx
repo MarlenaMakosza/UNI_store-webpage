@@ -35,13 +35,10 @@ export async function generateMetadata({ params }: PageProps) {
 async function getArticleHTML(htmlFile: string): Promise<string> {
   try {
     const filePath = join(process.cwd(), 'public', 'articles', htmlFile);
-    let html = await readFile(filePath, 'utf-8');
+    const html = await readFile(filePath, 'utf-8');
 
-    // Replace video and image paths with basePath
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '/projects/internet-marketing';
-    html = html.replace(/src="\/videos\//g, `src="${basePath}/videos/`);
-    html = html.replace(/src="\/images\//g, `src="${basePath}/images/`);
-
+    // In Next.js, files from public/ are served directly without basePath
+    // No need to modify paths - they work as-is
     return html;
   } catch (error) {
     console.error('Error reading HTML file:', error);
@@ -60,17 +57,6 @@ export default async function ArticlePage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-deep-black">
-      {/* Back Link */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link
-          href="/blog"
-          className="inline-flex items-center text-gray-400 hover:text-neon-violet transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Powrót do bloga
-        </Link>
-      </div>
-
       {/* Article Header */}
       <article className="pb-16">
         <header className="relative bg-gradient-to-br from-deep-black via-gray-900 to-deep-black py-12 md:py-16 mb-12">
@@ -105,27 +91,23 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
         </header>
 
-        {/* Original Email HTML */}
+        {/* Article Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          {article.slug === 'poznaj-technest' || article.slug === 'technest-infografika' ? (
+            // Video/Infographic articles - full width
             <div
-              className="rounded-lg shadow-2xl overflow-hidden"
+              className="w-full"
               dangerouslySetInnerHTML={{ __html: articleHTML }}
             />
-          </div>
-        </div>
-
-        {/* Back to Blog */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-neon-violet to-electric-blue text-white font-semibold rounded-full hover:shadow-lg hover:shadow-neon-violet/50 transition-all"
-            >
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Zobacz więcej artykułów
-            </Link>
-          </div>
+          ) : (
+            // Email articles - contained width with shadow
+            <div className="max-w-4xl mx-auto">
+              <div
+                className="rounded-lg shadow-2xl overflow-hidden"
+                dangerouslySetInnerHTML={{ __html: articleHTML }}
+              />
+            </div>
+          )}
         </div>
       </article>
     </div>
