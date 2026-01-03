@@ -1,15 +1,5 @@
 import { StrapiMedia, StrapiRelation, StrapiRelationCollection } from './strapi';
 
-export interface Brand {
-  name: string;
-  slug: string;
-  description: string | null;
-  logo: StrapiRelation<StrapiMedia>;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
-
 export interface ProductCategory {
   name: string;
   slug: string;
@@ -51,7 +41,8 @@ export interface Review {
 export interface Product {
   name: string;
   slug: string;
-  description: string | null;
+  marketingDescription: string | null;
+  technicalDescription: string | null;
   shortDescription: string | null;
   price: number;
   compareAtPrice: number | null;
@@ -63,7 +54,6 @@ export interface Product {
   featured: boolean;
   bestseller: boolean;
   newArrival: boolean;
-  brand: StrapiRelation<Brand>;
   category: StrapiRelation<ProductCategory>;
   tags: StrapiRelationCollection<ProductTag>;
   images: StrapiRelationCollection<StrapiMedia>;

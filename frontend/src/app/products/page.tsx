@@ -21,7 +21,6 @@ export default function ProductsPage() {
   const { addItem } = useCart();
 
   const categorySlug = searchParams.get('category') || undefined;
-  const brandSlug = searchParams.get('brand') || undefined;
 
   useEffect(() => {
     async function loadProducts() {
@@ -31,7 +30,6 @@ export default function ProductsPage() {
           page: currentPage,
           pageSize: 12,
           categorySlug,
-          brandSlug,
           search: searchQuery || undefined,
         });
         console.log('API Response:', response);
@@ -48,7 +46,7 @@ export default function ProductsPage() {
     }
 
     loadProducts();
-  }, [currentPage, categorySlug, brandSlug, searchQuery]);
+  }, [currentPage, categorySlug, searchQuery]);
 
   const handleAddToCart = async (productId: string, documentId: string) => {
     if (!products) return;

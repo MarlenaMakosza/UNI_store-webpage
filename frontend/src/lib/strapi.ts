@@ -1,4 +1,4 @@
-import { Product, ProductCategory, Brand } from '@/types/product';
+import { Product, ProductCategory } from '@/types/product';
 import { StrapiResponse, StrapiCollectionResponse } from '@/types/strapi';
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
@@ -49,7 +49,6 @@ export interface GetProductsOptions {
   page?: number;
   pageSize?: number;
   categorySlug?: string;
-  brandSlug?: string;
   tagSlug?: string;
   isFeatured?: boolean;
   search?: string;
@@ -63,7 +62,6 @@ export async function getProducts(
     page = 1,
     pageSize = 12,
     categorySlug,
-    brandSlug,
     tagSlug,
     isFeatured,
     search,
@@ -74,10 +72,6 @@ export async function getProducts(
 
   if (categorySlug) {
     filters.push(`filters[category][slug][$eq]=${categorySlug}`);
-  }
-
-  if (brandSlug) {
-    filters.push(`filters[brand][slug][$eq]=${brandSlug}`);
   }
 
   if (tagSlug) {
@@ -99,8 +93,6 @@ export async function getProducts(
     'populate[images][fields][1]=alternativeText',
     'populate[images][fields][2]=width',
     'populate[images][fields][3]=height',
-    'populate[brand][fields][0]=name',
-    'populate[brand][fields][1]=slug',
     'populate[category][fields][0]=name',
     'populate[category][fields][1]=slug',
     'populate[tags][fields][0]=name',
@@ -126,9 +118,6 @@ export async function getProduct(slug: string): Promise<StrapiResponse<Product>>
     'populate[images][fields][1]=alternativeText',
     'populate[images][fields][2]=width',
     'populate[images][fields][3]=height',
-    'populate[brand][fields][0]=name',
-    'populate[brand][fields][1]=slug',
-    'populate[brand][populate][logo][fields][0]=url',
     'populate[category][fields][0]=name',
     'populate[category][fields][1]=slug',
     'populate[tags][fields][0]=name',
@@ -198,17 +187,6 @@ export async function getCategory(slug: string): Promise<StrapiResponse<ProductC
     data: response.data[0],
     meta: response.meta,
   };
-}
-
-export async function getBrands(): Promise<StrapiCollectionResponse<Brand>> {
-  const populate = [
-    'populate[logo][fields][0]=url',
-    'populate[logo][fields][1]=alternativeText',
-  ].join('&');
-
-  return fetchAPI<StrapiCollectionResponse<Brand>>(
-    `/brands?${populate}`
-  );
 }
 
 export function getStrapiMediaUrl(url: string | null | undefined): string | null {

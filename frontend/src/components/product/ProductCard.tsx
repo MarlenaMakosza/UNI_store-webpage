@@ -69,12 +69,6 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         </div>
 
         <div className="p-4">
-          {data.brand?.data && (
-            <p className="text-xs text-gray-400 mb-1">
-              {data.brand.data.attributes?.name || data.brand.data.name}
-            </p>
-          )}
-
           <h3 className="font-semibold text-white mb-2 line-clamp-2 group-hover:text-neon-violet transition-colors">
             {data.name}
           </h3>
@@ -118,14 +112,14 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
 
       <div className="px-4 pb-4">
         <Button
-          onClick={handleAddToCart}
-          disabled={isOutOfStock}
+          onClick={(e) => e.preventDefault()}
+          disabled={true}
           variant="primary"
           size="sm"
-          className="w-full"
+          className="w-full cursor-not-allowed opacity-50"
         >
           <ShoppingCart className="w-4 h-4 mr-2" />
-          {isOutOfStock ? 'Niedostępny' : 'Do koszyka'}
+          Dodaj do koszyka
         </Button>
       </div>
     </div>

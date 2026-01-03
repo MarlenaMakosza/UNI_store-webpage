@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import Button from '@/components/ui/Button';
 import { getProduct, getStrapiMediaUrl } from '@/lib/strapi';
 import { formatPrice, calculateDiscount, getStockStatus, getStockStatusText } from '@/lib/utils';
@@ -158,12 +160,6 @@ export default function ProductDetailPage() {
           </div>
 
           <div>
-            {data.brand?.data && (
-              <p className="text-sm text-gray-400 mb-2">
-                {data.brand.data.attributes?.name || data.brand.data.name}
-              </p>
-            )}
-
             {data.category?.data && (
               <div className="flex flex-wrap gap-2 mb-6">
                 <span
@@ -212,21 +208,34 @@ export default function ProductDetailPage() {
             </div>
 
             <Button
-              onClick={handleAddToCart}
-              disabled={isOutOfStock}
+              onClick={(e) => e.preventDefault()}
+              disabled={true}
               variant="primary"
               size="lg"
-              className="w-full mb-6"
+              className="w-full mb-6 cursor-not-allowed opacity-50"
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
-              {isOutOfStock ? 'Niedostępny' : 'Dodaj do koszyka'}
+              Dodaj do koszyka
             </Button>
 
             {data.marketingDescription && (
               <div className="border-t border-gray-800 pt-6">
                 <h2 className="text-xl font-semibold text-white mb-4">Opis produktu</h2>
-                <div className="text-gray-300 whitespace-pre-line">
-                  {data.marketingDescription}
+                <div className="prose prose-invert prose-headings:text-white prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-300 prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:text-gray-300 max-w-none">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {data.marketingDescription}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            )}
+
+            {data.technicalDescription && (
+              <div className="border-t border-gray-800 pt-6 mt-6">
+                <h2 className="text-xl font-semibold text-white mb-4">Opis techniczny</h2>
+                <div className="prose prose-invert prose-headings:text-white prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-300 prose-strong:text-white prose-ul:text-gray-300 prose-ol:text-gray-300 prose-li:text-gray-300 max-w-none">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {data.technicalDescription}
+                  </ReactMarkdown>
                 </div>
               </div>
             )}
