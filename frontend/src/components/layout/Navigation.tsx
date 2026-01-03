@@ -5,6 +5,7 @@ export default function Navigation() {
     { href: '/', label: 'Strona główna' },
     { href: '/products', label: 'Produkty' },
     { href: '/categories', label: 'Kategorie' },
+    { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Kontakt' },
   ];
 

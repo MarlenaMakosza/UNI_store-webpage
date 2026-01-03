@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poznaj TechNest - Reklama</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .email-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header */
+      .header {
+        background: #0d0d0d;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(138, 43, 226, 0.2) 0%,
+          transparent 70%
+        );
+        top: -80px;
+        right: -40px;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(
+          circle,
+          rgba(63, 142, 252, 0.2) 0%,
+          transparent 70%
+        );
+        top: -60px;
+        left: -30px;
+      }
+
+      .logo {
+        font-size: 48px;
+        font-weight: 900;
+        background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        z-index: 1;
+        letter-spacing: 2px;
+      }
+
+      .tagline {
+        color: #9ca3af;
+        font-size: 16px;
+        margin-top: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Video Section */
+      .video-section {
+        background: #0d0d0d;
+        padding: 0;
+        position: relative;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        background: #000;
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* Content */
+      .content {
+        padding: 45px 35px;
+      }
+
+      .intro-text {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 35px;
+      }
+
+      .intro-text strong {
+        background: linear-gradient(90deg, #8a2be2 0%, #3f8efc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      /* Features */
+      .features {
+        background: linear-gradient(
+          135deg,
+          rgba(138, 43, 226, 0.05),
+          rgba(63, 142, 252, 0.05)
+        );
+        border-radius: 18px;
+        padding: 35px 30px;
+        margin: 35px 0;
+        border: 2px solid rgba(138, 43, 226, 0.2);
+      }
+
+      .features h2 {
+        text-align: center;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .features h2 .highlight {
+        background: linear-gradient(90deg, #8a2be2 0%, #3f8efc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 25px;
+        background: white;
+        border-radius: 15px;
+        border: 2px solid rgba(138, 43, 226, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        border-color: #8a2be2;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+      }
+
+      .feature-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .feature-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 10px;
+      }
+
+      .feature-desc {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 35px 0;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 30px 20px;
+        background: linear-gradient(135deg, #8a2be2 0%, #3f8efc 100%);
+        border-radius: 15px;
+        color: white;
+      }
+
+      .stat-value {
+        font-size: 36px;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        text-align: center;
+        padding: 20px 30px 45px 30px;
+        background: linear-gradient(to bottom, white, #f9f9f9);
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(90deg, #8a2be2 0%, #3f8efc 100%);
+        color: white;
+        padding: 22px 65px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 12px 35px rgba(138, 43, 226, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 17px 45px rgba(138, 43, 226, 0.6);
+      }
+
+      .cta-note {
+        margin-top: 20px;
+        color: #777;
+        font-size: 14px;
+      }
+
+      /* Footer */
+      .footer {
+        background: #ffffff;
+        color: #6b7280;
+        padding: 35px;
+        text-align: center;
+        border-top: 1px solid #d1d5db;
+      }
+
+      .footer-links {
+        margin: 20px 0;
+      }
+
+      .footer-links a {
+        color: #8b5cf6;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #3b82f6;
+      }
+
+      .footer-info {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 600px) {
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-button {
+          padding: 18px 45px;
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">TECHNEST</div>
+        <div class="tagline">Twoje gniazdo w świecie technologii</div>
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-section">
+        <div class="video-container">
+          <video controls autoplay muted loop playsinline>
+            <source src="/videos/technest-reklama.mp4" type="video/mp4" />
+            Twoja przeglądarka nie obsługuje odtwarzania wideo.
+          </video>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="intro-text">
+          <p>
+            <strong>TechNest</strong> to miejsce, gdzie technologia spotyka się
+            z pasją!
+          </p>
+          <p style="margin-top: 15px">
+            Odkryj najnowsze produkty elektroniczne, sprawdzone przez
+            profesjonalistów i dostępne w konkurencyjnych cenach.
+          </p>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+          <h2>Dlaczego <span class="highlight">TechNest?</span></h2>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">📦</div>
+              <div class="feature-title">Szybka dostawa</div>
+              <div class="feature-desc">
+                Ekspresowa wysyłka w 24h. Darmowa dostawa od 150 zł
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">💎</div>
+              <div class="feature-title">Najwyższa jakość</div>
+              <div class="feature-desc">
+                Tylko oryginalne produkty z pełną gwarancją producenta
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">🎯</div>
+              <div class="feature-title">Najlepsze ceny</div>
+              <div class="feature-desc">
+                Konkurencyjne ceny i regularne promocje dla klientów
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">🤝</div>
+              <div class="feature-title">Wsparcie 24/7</div>
+              <div class="feature-desc">
+                Profesjonalna obsługa i pomoc w wyborze produktów
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value">10k+</div>
+            <div class="stat-label">Zadowolonych klientów</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-value">5000+</div>
+            <div class="stat-label">Produktów w ofercie</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-value">99%</div>
+            <div class="stat-label">Pozytywnych opinii</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <a href="#" class="cta-button">Odkryj TechNest →</a>
+        <p class="cta-note">Rozpocznij swoją przygodę z technologią już dziś!</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#">Regulamin</a> | <a href="#">Polityka prywatności</a> |
+          <a href="#">Kontakt</a>
+        </div>
+
+        <div class="footer-info">
+          📍 Warszawa | 📞 +48 123 456 789<br />
+          📧 kontakt@technest.pl
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
