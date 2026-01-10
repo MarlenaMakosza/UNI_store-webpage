@@ -5,6 +5,7 @@
 import * as $_app from "./routes/_app.tsx";
 import * as $blog from "./routes/blog.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
+import * as $blog_index from "./routes/blog/index.tsx";
 import * as $dostawa from "./routes/dostawa.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $kategorie from "./routes/kategorie.tsx";
@@ -17,6 +18,7 @@ import * as $produkty_slug_ from "./routes/produkty/[slug].tsx";
 import * as $regulamin from "./routes/regulamin.tsx";
 import * as $BannerCarousel from "./islands/BannerCarousel.tsx";
 import * as $NewsletterPopup from "./islands/NewsletterPopup.tsx";
+import * as $ProductGallery from "./islands/ProductGallery.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -24,6 +26,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/blog.tsx": $blog,
     "./routes/blog/[slug].tsx": $blog_slug_,
+    "./routes/blog/index.tsx": $blog_index,
     "./routes/dostawa.tsx": $dostawa,
     "./routes/index.tsx": $index,
     "./routes/kategorie.tsx": $kategorie,
@@ -38,6 +41,7 @@ const manifest = {
   islands: {
     "./islands/BannerCarousel.tsx": $BannerCarousel,
     "./islands/NewsletterPopup.tsx": $NewsletterPopup,
+    "./islands/ProductGallery.tsx": $ProductGallery,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

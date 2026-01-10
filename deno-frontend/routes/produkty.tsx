@@ -6,14 +6,24 @@ function ProductCard({ product }: { product: typeof products[0] }) {
     <a href={`/produkty/${product.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
       <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center relative">
         {product.isNew && (
-          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded">NOWOSC</span>
+          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded z-10">NOWOSC</span>
         )}
         {product.oldPrice && (
-          <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">PROMOCJA</span>
+          <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded z-10">PROMOCJA</span>
         )}
-        <span class="text-6xl">
-          {product.category === "Myszki" ? "🖱️" : product.category === "Klawiatury" ? "⌨️" : product.category === "Sluchawki" ? "🎧" : "🖥️"}
-        </span>
+        {product.image && product.image.startsWith("/products/") ? (
+          <img src={product.image} alt={product.name} class="h-full w-full object-cover" />
+        ) : (
+          <span class="text-6xl">
+            {product.categorySlug === "myszki" ? "🖱️" :
+             product.categorySlug === "klawiatury" ? "⌨️" :
+             product.categorySlug === "sluchawki" ? "🎧" :
+             product.categorySlug === "monitory" ? "🖥️" :
+             product.categorySlug === "tablety" ? "📱" :
+             product.categorySlug === "akcesoria" ? "🎮" :
+             product.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}
+          </span>
+        )}
       </div>
       <div class="p-4">
         <span class="text-xs text-primary font-semibold uppercase">{product.category}</span>

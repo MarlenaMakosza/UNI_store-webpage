@@ -1,6 +1,7 @@
 import { PageProps } from "$fresh/server.ts";
 import Layout from "../../components/Layout.tsx";
 import { getProductBySlug, products } from "../../data/products.ts";
+import ProductGallery from "../../islands/ProductGallery.tsx";
 
 export default function ProductPage(props: PageProps) {
   const product = getProductBySlug(props.params.slug);
@@ -39,14 +40,24 @@ export default function ProductPage(props: PageProps) {
           </nav>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Product Image */}
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-              <div class="h-96 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-                <span class="text-9xl">
-                  {product.category === "Myszki" ? "🖱️" : product.category === "Klawiatury" ? "⌨️" : product.category === "Sluchawki" ? "🎧" : "🖥️"}
-                </span>
+            {/* Product Image Gallery */}
+            {product.images && product.images.length > 0 ? (
+              <ProductGallery images={product.images} productName={product.name} />
+            ) : (
+              <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                <div class="h-96 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+                  <span class="text-9xl">
+                    {product.categorySlug === "myszki" ? "🖱️" :
+                     product.categorySlug === "klawiatury" ? "⌨️" :
+                     product.categorySlug === "sluchawki" ? "🎧" :
+                     product.categorySlug === "monitory" ? "🖥️" :
+                     product.categorySlug === "tablety" ? "📱" :
+                     product.categorySlug === "akcesoria" ? "🎮" :
+                     product.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Product Info */}
             <div>
@@ -101,6 +112,83 @@ export default function ProductPage(props: PageProps) {
             </div>
           </div>
 
+          {/* Full Description */}
+          {product.fullDescription && (
+            <section class="mt-16">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <span class="gradient-text">{product.name}</span> - przewaga, ktora uslyszysz
+              </h2>
+
+              <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                {/* Intro */}
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                  {product.fullDescription.intro}
+                </p>
+
+                {/* Section: Why choose */}
+                <h3 class="text-xl font-bold text-gray-800 mb-6">
+                  Dlaczego warto wybrac {product.name}?
+                </h3>
+
+                {/* Features */}
+                <div class="space-y-6 mb-8">
+                  {product.fullDescription.sections.map((section, index) => (
+                    <div key={index} class="border-l-4 border-primary pl-6">
+                      <h4 class="font-bold text-gray-800 mb-2">{section.title}</h4>
+                      <p class="text-gray-600 leading-relaxed">{section.content}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Outro */}
+                {product.fullDescription.outro && (
+                  <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mt-8">
+                    <h4 class="font-bold text-gray-800 mb-2">
+                      {product.name} - wybor, ktory zrobi roznice
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed">
+                      {product.fullDescription.outro}
+                    </p>
+                  </div>
+                )}
+
+                {/* Note */}
+                {product.fullDescription.note && (
+                  <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mt-6 flex items-start gap-3">
+                    <span class="text-yellow-600 text-xl">⚠️</span>
+                    <p class="text-yellow-800 text-sm">
+                      {product.fullDescription.note}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Specs Table */}
+          {product.specs && product.specs.length > 0 && (
+            <section class="mt-12">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">Specyfikacja techniczna</h2>
+
+              <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                <table class="w-full">
+                  <tbody>
+                    {product.specs.map((spec, index) => (
+                      <tr key={index} class={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                        <td class="px-6 py-4 font-semibold text-gray-800 w-1/3 border-r border-gray-200">
+                          {spec.label}
+                        </td>
+                        <td class="px-6 py-4 text-gray-600">
+                          {spec.value}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <section class="mt-16">
@@ -109,9 +197,19 @@ export default function ProductPage(props: PageProps) {
                 {relatedProducts.map((p) => (
                   <a key={p.id} href={`/produkty/${p.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
                     <div class="h-40 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-                      <span class="text-5xl">
-                        {p.category === "Myszki" ? "🖱️" : p.category === "Klawiatury" ? "⌨️" : p.category === "Sluchawki" ? "🎧" : "🖥️"}
-                      </span>
+                      {p.image && p.image.startsWith("/products/") ? (
+                        <img src={p.image} alt={p.name} class="h-full w-full object-cover" />
+                      ) : (
+                        <span class="text-5xl">
+                          {p.categorySlug === "myszki" ? "🖱️" :
+                           p.categorySlug === "klawiatury" ? "⌨️" :
+                           p.categorySlug === "sluchawki" ? "🎧" :
+                           p.categorySlug === "monitory" ? "🖥️" :
+                           p.categorySlug === "tablety" ? "📱" :
+                           p.categorySlug === "akcesoria" ? "🎮" :
+                           p.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}
+                        </span>
+                      )}
                     </div>
                     <div class="p-4">
                       <h3 class="font-bold text-gray-800 line-clamp-1">{p.name}</h3>

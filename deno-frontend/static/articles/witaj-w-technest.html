@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Witaj w TechNest!</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header */
+      .header {
+        background: #ffffff;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid #d1d5db;
+      }
+
+      .logo {
+        font-size: 36px;
+        font-weight: 900;
+        background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+        letter-spacing: 1px;
+      }
+
+      .tagline {
+        background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 15px;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #8a2be2 0%, #3f8efc 100%);
+        padding: 50px 30px;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "🏠";
+        position: absolute;
+        font-size: 200px;
+        opacity: 0.1;
+        top: -50px;
+        right: -30px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+        margin-bottom: 12px;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        font-weight: 900;
+      }
+
+      .hero .subtitle {
+        font-size: 18px;
+        margin-bottom: 25px;
+        opacity: 0.95;
+      }
+
+      .discount-badge {
+        background: white;
+        color: #8a2be2;
+        display: inline-block;
+        padding: 20px 50px;
+        border-radius: 50px;
+        font-size: 52px;
+        font-weight: 900;
+        margin: 20px 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Content */
+      .content {
+        padding: 35px 35px;
+      }
+
+      .welcome-text {
+        text-align: center;
+        font-size: 17px;
+        line-height: 1.7;
+        color: #333;
+        margin-bottom: 35px;
+      }
+
+      .welcome-text strong {
+        color: #8a2be2;
+      }
+
+      /* Code Box */
+      .code-box {
+        background: linear-gradient(
+          135deg,
+          rgba(138, 43, 226, 0.08),
+          rgba(63, 142, 252, 0.08)
+        );
+        border: 2px solid rgba(138, 43, 226, 0.3);
+        padding: 25px;
+        margin: 35px 0;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .code-label {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .code-value {
+        font-size: 32px;
+        font-weight: 900;
+        background: linear-gradient(90deg, #8a2be2 0%, #3f8efc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 3px;
+        font-family: "Courier New", monospace;
+      }
+
+      .code-details {
+        margin-top: 12px;
+        font-size: 13px;
+        color: #777;
+      }
+
+      /* Benefits */
+      .benefits {
+        background: #f9f9f9;
+        padding: 35px 25px;
+        border-radius: 15px;
+        margin: 35px 0 0 0;
+      }
+
+      .benefits h3 {
+        text-align: center;
+        color: #1a1a1a;
+        margin-bottom: 25px;
+        font-size: 24px;
+        font-weight: 900;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: center;
+        margin: 18px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .benefit-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.15);
+      }
+
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #8a2be2, #3f8efc);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        margin-right: 18px;
+        flex-shrink: 0;
+        box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+      }
+
+      .benefit-text {
+        color: #333;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .benefit-text strong {
+        color: #1a1a1a;
+        font-weight: 700;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        text-align: center;
+        padding: 10px 30px 45px 30px;
+        background: linear-gradient(to bottom, white, #f9f9f9);
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(90deg, #8a2be2 0%, #3f8efc 100%);
+        color: white;
+        padding: 22px 65px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 12px 35px rgba(138, 43, 226, 0.4);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 17px 45px rgba(138, 43, 226, 0.6);
+      }
+
+      .cta-note {
+        margin-top: 20px;
+        color: #777;
+        font-size: 14px;
+      }
+
+      /* Footer */
+      .footer {
+        background: #ffffff;
+        color: #6b7280;
+        padding: 35px;
+        text-align: center;
+        border-top: 1px solid #d1d5db;
+      }
+
+      .footer-links {
+        margin: 20px 0;
+      }
+
+      .footer-links a {
+        color: #8b5cf6;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #3b82f6;
+      }
+
+      .footer-info {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .unsubscribe {
+        font-size: 12px;
+        color: #9ca3af;
+        margin-top: 25px;
+        line-height: 1.6;
+      }
+
+      .unsubscribe a {
+        color: #6b7280;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 30px;
+        }
+
+        .discount-badge {
+          font-size: 40px;
+          padding: 15px 40px;
+        }
+
+        .cta-button {
+          padding: 16px 40px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">TECHNEST</div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="hero">
+        <div class="hero-content">
+          <h1>🎉 Witamy w TechNest! 🎉</h1>
+          <div class="subtitle">Twoje konto zostało pomyślnie utworzone</div>
+          <div class="discount-badge">-15%</div>
+          <div class="subtitle">NA PIERWSZE ZAKUPY!</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <div class="welcome-text">
+          <p><strong>Dziękujemy za dołączenie do rodziny TechNest!</strong></p>
+          <p style="margin-top: 15px">
+            Z okazji założenia konta przygotowaliśmy dla Ciebie
+            <strong>ekskluzywny rabat 15%</strong>
+            na pierwsze zakupy.
+          </p>
+        </div>
+
+        <!-- Discount Code -->
+        <div class="code-box">
+          <div class="code-label">Twój kod rabatowy:</div>
+          <div class="code-value">GNIAZDO15</div>
+          <div class="code-details">
+            Ważny przez 30 dni • Min. wartość zamówienia: 200 zł
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="benefits">
+          <h3>Co zyskujesz w TechNest?</h3>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">🚚</div>
+            <div class="benefit-text">
+              <strong>Darmowa dostawa</strong> od 150 zł
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-text">
+              <strong>Ekspresowa wysyłka</strong> tego samego dnia
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">💎</div>
+            <div class="benefit-text">
+              <strong>Program lojalnościowy</strong> - zbieraj punkty za każde
+              zakupy
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">🎁</div>
+            <div class="benefit-text">
+              <strong>Ekskluzywne oferty</strong> tylko dla zarejestrowanych
+              użytkowników
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <a href="#" class="cta-button">Zaprojektuj swoje gniazdo →</a>
+        <p class="cta-note">
+          Nie czekaj! Oferta ważna przez 30 dni od rejestracji
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#">Regulamin</a> | <a href="#">Polityka prywatności</a> |
+          <a href="#">Kontakt</a>
+        </div>
+
+        <div class="footer-info">
+          📍 Warszawa | 📞 +48 123 456 789<br />
+          📧 kontakt@technest.pl
+        </div>
+
+        <div class="unsubscribe">
+          Jeżeli nie chcesz otrzymywać od nas podobnych wiadomości mailowych,
+          <a href="#">wypisz się</a>.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
