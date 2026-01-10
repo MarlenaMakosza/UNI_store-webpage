@@ -12,9 +12,9 @@ export default function ProductPage(props: PageProps) {
         <div class="min-h-screen bg-gray-50 py-16">
           <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">Produkt nie znaleziony</h1>
-            <p class="text-gray-500 mb-8">Przepraszamy, nie znalezlismy szukanego produktu.</p>
+            <p class="text-gray-500 mb-8">Przepraszamy, nie znaleźliśmy szukanego produktu.</p>
             <a href="/produkty" class="inline-block px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
-              Wroc do produktow
+              Wróć do produktów
             </a>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function ProductPage(props: PageProps) {
           {/* Breadcrumb */}
           <nav class="mb-8">
             <ol class="flex items-center space-x-2 text-sm">
-              <li><a href="/" class="text-gray-500 hover:text-primary">Strona glowna</a></li>
+              <li><a href="/" class="text-gray-500 hover:text-primary">Strona główna</a></li>
               <li class="text-gray-400">/</li>
               <li><a href="/produkty" class="text-gray-500 hover:text-primary">Produkty</a></li>
               <li class="text-gray-400">/</li>
@@ -65,9 +65,9 @@ export default function ProductPage(props: PageProps) {
               <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">{product.name}</h1>
 
               <div class="flex items-center gap-4 mb-6">
-                <span class="text-3xl font-bold text-gray-800">{product.price.toFixed(2)} zl</span>
+                <span class="text-3xl font-bold text-gray-800">{product.price.toFixed(2)} zł</span>
                 {product.oldPrice && (
-                  <span class="text-xl text-gray-400 line-through">{product.oldPrice.toFixed(2)} zl</span>
+                  <span class="text-xl text-gray-400 line-through">{product.oldPrice.toFixed(2)} zł</span>
                 )}
                 {product.oldPrice && (
                   <span class="px-3 py-1 bg-red-500 text-white text-sm font-bold rounded">
@@ -83,19 +83,19 @@ export default function ProductPage(props: PageProps) {
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  Dostepny w magazynie
+                  Dostępny w magazynie
                 </div>
                 <div class="flex items-center gap-3 text-gray-600">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  Darmowa dostawa od 150 zl
+                  Darmowa dostawa od 150 zł
                 </div>
                 <div class="flex items-center gap-3 text-gray-600">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  24 miesiace gwarancji
+                  24 miesiące gwarancji
                 </div>
               </div>
 
@@ -116,7 +116,7 @@ export default function ProductPage(props: PageProps) {
           {product.fullDescription && (
             <section class="mt-16">
               <h2 class="text-2xl font-bold text-gray-800 mb-6">
-                <span class="gradient-text">{product.name}</span> - przewaga, ktora uslyszysz
+                <span class="gradient-text">{product.name}</span> - przewaga, którą usłyszysz
               </h2>
 
               <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
@@ -127,7 +127,7 @@ export default function ProductPage(props: PageProps) {
 
                 {/* Section: Why choose */}
                 <h3 class="text-xl font-bold text-gray-800 mb-6">
-                  Dlaczego warto wybrac {product.name}?
+                  Dlaczego warto wybrać {product.name}?
                 </h3>
 
                 {/* Features */}
@@ -144,7 +144,7 @@ export default function ProductPage(props: PageProps) {
                 {product.fullDescription.outro && (
                   <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 mt-8">
                     <h4 class="font-bold text-gray-800 mb-2">
-                      {product.name} - wybor, ktory zrobi roznice
+                      {product.name} - wybór, który zrobi różnicę
                     </h4>
                     <p class="text-gray-700 leading-relaxed">
                       {product.fullDescription.outro}
@@ -213,7 +213,7 @@ export default function ProductPage(props: PageProps) {
                     </div>
                     <div class="p-4">
                       <h3 class="font-bold text-gray-800 line-clamp-1">{p.name}</h3>
-                      <span class="text-lg font-bold text-primary">{p.price.toFixed(2)} zl</span>
+                      <span class="text-lg font-bold text-primary">{p.price.toFixed(2)} zł</span>
                     </div>
                   </a>
                 ))}

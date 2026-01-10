@@ -68,7 +68,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
           <div class="h-96 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-4">
             <img
               src={images[selectedIndex]}
-              alt={`${productName} - zdjecie ${selectedIndex + 1}`}
+              alt={`${productName} - zdjęcie ${selectedIndex + 1}`}
               class="max-h-full max-w-full object-contain cursor-zoom-in transition-transform hover:scale-105"
               onClick={() => setIsLightboxOpen(true)}
             />
@@ -80,7 +80,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               <button
                 onClick={goToPrevious}
                 class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                aria-label="Poprzednie zdjecie"
+                aria-label="Poprzednie zdjęcie"
               >
                 <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -89,7 +89,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               <button
                 onClick={goToNext}
                 class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                aria-label="Nastepne zdjecie"
+                aria-label="Następne zdjęcie"
               >
                 <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -103,7 +103,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
             </svg>
-            Kliknij aby powiekszyc
+            Kliknij aby powiększyć
           </div>
 
           {/* Image counter */}
@@ -127,7 +127,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               >
                 <img
                   src={image}
-                  alt={`${productName} - miniatura ${index + 1}`}
+                  alt={`${productName} - miniaturka ${index + 1}`}
                   class="w-full h-full object-cover"
                 />
               </button>
@@ -159,7 +159,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               <button
                 onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
                 class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Poprzednie zdjecie"
+                aria-label="Poprzednie zdjęcie"
               >
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -168,7 +168,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
               <button
                 onClick={(e) => { e.stopPropagation(); goToNext(); }}
                 class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                aria-label="Nastepne zdjecie"
+                aria-label="Następne zdjęcie"
               >
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -180,7 +180,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
           {/* Main image */}
           <img
             src={images[selectedIndex]}
-            alt={`${productName} - zdjecie ${selectedIndex + 1}`}
+            alt={`${productName} - zdjęcie ${selectedIndex + 1}`}
             class="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
@@ -205,7 +205,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
                 >
                   <img
                     src={image}
-                    alt={`${productName} - miniatura ${index + 1}`}
+                    alt={`${productName} - miniaturka ${index + 1}`}
                     class="w-full h-full object-cover"
                   />
                 </button>

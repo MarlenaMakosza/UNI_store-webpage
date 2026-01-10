@@ -37,43 +37,43 @@ export const products: Product[] = [
     name: "Xiaomi Pad 6",
     description: "Wszechstronny tablet 11\" WQHD+ 144Hz do nauki i rozrywki",
     fullDescription: {
-      intro: "Szukasz narzedzia, ktore ulatwi Ci zycie na studiach i pozwoli cieszyc sie rozrywka na najwyzszym poziomie? Xiaomi Pad 6 to idealny wybor dla studentow i uczniow, ktorzy cenia sobie wydajnosc, mobilnosc i funkcjonalnosc.",
+      intro: "Szukasz narzędzia, które ułatwi Ci życie na studiach i pozwoli cieszyć się rozrywką na najwyższym poziomie? Xiaomi Pad 6 to idealny wybór dla studentów i uczniów, którzy cenią sobie wydajność, mobilność i funkcjonalność.",
       sections: [
         {
-          title: "Wydajnosc na poziomie laptopa",
-          content: "Wyposazony w procesor Snapdragon 870 i 8 GB RAM, Xiaomi Pad 6 radzi sobie bezproblemowo z wielozadaniowoscia, nawet przy uruchomieniu wielu aplikacji jednoczesnie. Przegladanie notatek, uczestnictwo w zajeciach online czy edycja dokumentow - wszystko dziala plynnie i bez opoznien."
+          title: "Wydajność na poziomie laptopa",
+          content: "Wyposażony w procesor Snapdragon 870 i 8 GB RAM, Xiaomi Pad 6 radzi sobie bezproblemowo z wielozadaniowością, nawet przy uruchomieniu wielu aplikacji jednocześnie. Przeglądanie notatek, uczestnictwo w zajęciach online czy edycja dokumentów - wszystko działa płynnie i bez opóźnień."
         },
         {
           title: "Ekran WQHD+ 144 Hz - idealny do nauki i rozrywki",
-          content: "11-calowy wyswietlacz o wysokiej rozdzielczosci i odswiezaniu 144 Hz zapewnia krystalicznie czysty obraz i plynnosc dzialania. Dzieki temu prezentacje, notatki i dokumenty sa czytelne i szczegolowe, a po zajeciach mozesz zanurzyc sie w ulubionym serialu czy grze bez kompromisow w jakosci obrazu."
+          content: "11-calowy wyświetlacz o wysokiej rozdzielczości i odświeżaniu 144 Hz zapewnia krystalicznie czysty obraz i płynność działania. Dzięki temu prezentacje, notatki i dokumenty są czytelne i szczegółowe, a po zajęciach możesz zanurzyć się w ulubionym serialu czy grze bez kompromisów w jakości obrazu."
         },
         {
-          title: "Dlugi czas pracy na baterii",
-          content: "Bateria o pojemnosci 8840 mAh pozwala na nawet 16 godzin pracy na jednym ladowaniu. Mozesz zapomniec o noszeniu ladowarki na uczelnie - Xiaomi Pad 6 wytrzyma caly dzien intensywnego uzytkowania."
+          title: "Długi czas pracy na baterii",
+          content: "Bateria o pojemności 8840 mAh pozwala na nawet 16 godzin pracy na jednym ładowaniu. Możesz zapomnieć o noszeniu ładowarki na uczelnię - Xiaomi Pad 6 wytrzyma cały dzień intensywnego użytkowania."
         },
         {
-          title: "Mobilnosc i lekkosc",
-          content: "Wazy zaledwie 490 g, wiec bez problemu zmiesci sie w plecaku czy torbie. To idealny sprzet, ktory mozesz zabrac na wyklad, do biblioteki czy na spotkanie z przyjaciolmi."
+          title: "Mobilność i lekkość",
+          content: "Waży zaledwie 490 g, więc bez problemu zmieści się w plecaku czy torbie. To idealny sprzęt, który możesz zabrać na wykład, do biblioteki czy na spotkanie z przyjaciółmi."
         },
         {
           title: "Wsparcie dla rysika i klawiatury",
-          content: "Dodaj rysik i klawiature, aby jeszcze bardziej zwiekszyc produktywnosc. Notowanie na ekranie staje sie rownie naturalne jak pisanie na papierze, a klawiatura pozwala na szybkie tworzenie i edytowanie dokumentow."
+          content: "Dodaj rysik i klawiaturę, aby jeszcze bardziej zwiększyć produktywność. Notowanie na ekranie staje się równie naturalne jak pisanie na papierze, a klawiatura pozwala na szybkie tworzenie i edytowanie dokumentów."
         }
       ],
-      outro: "Ulatwij sobie zycie - korzystaj z nowoczesnych rozwiazan i ucz sie efektywniej. Xiaomi Pad 6 laczy w sobie moc laptopa, wygode tabletu i jakosc premium - wszystko w przystepnej cenie. Teraz mozesz miec wszystko pod reka - na wykladzie, w domu i w podrozy.",
-      note: "Rysik, klawiatura, etui nie znajduja sie w zestawie!"
+      outro: "Ułatw sobie życie - korzystaj z nowoczesnych rozwiązań i ucz się efektywniej. Xiaomi Pad 6 łączy w sobie moc laptopa, wygodę tabletu i jakość premium - wszystko w przystępnej cenie. Teraz możesz mieć wszystko pod ręką - na wykładzie, w domu i w podróży.",
+      note: "Rysik, klawiatura, etui nie znajdują się w zestawie!"
     },
     specs: [
-      { label: "Wyswietlacz", value: "11\" WQHD+ 2880x1800" },
-      { label: "Odswiezanie", value: "144 Hz" },
+      { label: "Wyświetlacz", value: "11\" WQHD+ 2880x1800" },
+      { label: "Odświeżanie", value: "144 Hz" },
       { label: "Procesor", value: "Snapdragon 870" },
-      { label: "Pamiec RAM", value: "8 GB" },
-      { label: "Pamiec wewnetrzna", value: "128 GB / 256 GB" },
+      { label: "Pamięć RAM", value: "8 GB" },
+      { label: "Pamięć wewnętrzna", value: "128 GB / 256 GB" },
       { label: "Bateria", value: "8840 mAh" },
       { label: "Czas pracy", value: "Do 16 godzin" },
       { label: "Waga", value: "490 g" },
       { label: "System", value: "MIUI Pad 14 (Android 13)" },
-      { label: "Akcesoria", value: "Obsluga rysika i klawiatury" }
+      { label: "Akcesoria", value: "Obsługa rysika i klawiatury" }
     ],
     price: 1299.99,
     oldPrice: 1599.99,
@@ -96,47 +96,47 @@ export const products: Product[] = [
     id: 2,
     slug: "logitech-mx-mechanical",
     name: "Logitech MX Mechanical",
-    description: "Profesjonalna klawiatura mechaniczna dla wymagajacych",
+    description: "Profesjonalna klawiatura mechaniczna dla wymagających",
     fullDescription: {
-      intro: "Szukasz narzedzia, ktore podniesie Twoja efektywnosc w pracy i zapewni wygode podczas wielogodzinnych sesji przy biurku? Logitech MX Mechanical to klawiatura stworzona z mysla o profesjonalistach, ktorzy cenia jakosc, precyzje i ergonomie.",
+      intro: "Szukasz narzędzia, które podniesie Twoją efektywność w pracy i zapewni wygodę podczas wielogodzinnych sesji przy biurku? Logitech MX Mechanical to klawiatura stworzona z myślą o profesjonalistach, którzy cenią jakość, precyzję i ergonomię.",
       sections: [
         {
-          title: "Minimalistyczny design i najwyzsza jakosc wykonania",
-          content: "Smukla, aluminiowa obudowa nadaje klawiaturze elegancki, nowoczesny wyglad, ktory podkresla profesjonalizm na kazdym biurku. To nie tylko narzedzie pracy, ale rowniez element, ktory robi wrazenie - doskonale wpisujac sie w estetyka nowoczesnego biura. Odpowiednie wywaznie sprawia, ze klawiatura pozostaje stabilna nawet podczas intensywnego pisania."
+          title: "Minimalistyczny design i najwyższa jakość wykonania",
+          content: "Smukła, aluminiowa obudowa nadaje klawiaturze elegancki, nowoczesny wygląd, który podkreśla profesjonalizm na każdym biurku. To nie tylko narzędzie pracy, ale również element, który robi wrażenie - doskonale wpisując się w estetykę nowoczesnego biura. Odpowiednie wyważenie sprawia, że klawiatura pozostaje stabilna nawet podczas intensywnego pisania."
         },
         {
-          title: "Dlugi czas pracy na baterii",
-          content: "Na pelnym naladowaniu klawiatura dziala do 15 dni (przy wlaczonym podswietleniu) lub nawet 10 miesiecy przy wylaczonym podswietleniu. Ladowanie przez USB-C pozwala na szybkie uzupelnienie energii w razie potrzeby."
+          title: "Długi czas pracy na baterii",
+          content: "Na pełnym naładowaniu klawiatura działa do 15 dni (przy włączonym podświetleniu) lub nawet 10 miesięcy przy wyłączonym podświetleniu. Ładowanie przez USB-C pozwala na szybkie uzupełnienie energii w razie potrzeby."
         },
         {
-          title: "Mechaniczne przelaczniki klasy premium",
-          content: "Dzieki niskoprofilowym przelacznikam mechanicznym, MX Mechanical oferuje idealne polaczenie precyzji, szybkosci i cichego dzialania. Wybierz wariant najlepiej pasujacy do Twojego stylu pracy: Tactile Quiet (dotykowe) - ciche i precyzyjne, Clicky (klikajace) - dostojny klik, Linear (liniowe) - plynne i lekkie."
+          title: "Mechaniczne przełączniki klasy premium",
+          content: "Dzięki niskoprofilowym przełącznikom mechanicznym, MX Mechanical oferuje idealne połączenie precyzji, szybkości i cichego działania. Wybierz wariant najlepiej pasujący do Twojego stylu pracy: Tactile Quiet (dotykowe) - ciche i precyzyjne, Clicky (klikające) - dostojny klik, Linear (liniowe) - płynne i lekkie."
         },
         {
-          title: "Podswietlenie adaptacyjne",
-          content: "Inteligentne podswietlenie dostosowuje sie automatycznie do warunkow oswietleniowych, dzieki czemu klawisze sa zawsze dobrze widoczne - bez wzgledu na pore dnia. MX Mechanical oferuje klasyczne biale podswietlenie, ktore nie rozprasza uwagi i doskonale wpisuje sie w profesjonalny charakter stanowiska pracy."
+          title: "Podświetlenie adaptacyjne",
+          content: "Inteligentne podświetlenie dostosowuje się automatycznie do warunków oświetleniowych, dzięki czemu klawisze są zawsze dobrze widoczne - bez względu na porę dnia. MX Mechanical oferuje klasyczne białe podświetlenie, które nie rozprasza uwagi i doskonale wpisuje się w profesjonalny charakter stanowiska pracy."
         },
         {
-          title: "Lacznosc z wieloma urzadzeniami",
-          content: "MX Mechanical pozwala na plynne przelaczanie sie miedzy trzema urzadzeniami jednoczesnie - wystarczy jedno nacisniecie klawisza. Pracuj na komputerze stacjonarnym, laptopie i tablecie bez potrzeby ciaglego parowania urzadzen."
+          title: "Łączność z wieloma urządzeniami",
+          content: "MX Mechanical pozwala na płynne przełączanie się między trzema urządzeniami jednocześnie - wystarczy jedno naciśnięcie klawisza. Pracuj na komputerze stacjonarnym, laptopie i tablecie bez potrzeby ciągłego parowania urządzeń."
         },
         {
-          title: "Niskoprofilowa konstrukcja - wieksza wygoda i mniejsze zmeczenie",
-          content: "Nizszy profil klawiszy i minimalny skok sprawiaja, ze pisanie jest bardziej naturalne i mniej obciazajace dla nadgarstkow. Dzieki temu mozesz pisac szybciej i wygodniej, bez uczucia zmeczenia nawet po wielu godzinach pracy."
+          title: "Niskoprofilowa konstrukcja - większa wygoda i mniejsze zmęczenie",
+          content: "Niższy profil klawiszy i minimalny skok sprawiają, że pisanie jest bardziej naturalne i mniej obciążające dla nadgarstków. Dzięki temu możesz pisać szybciej i wygodniej, bez uczucia zmęczenia nawet po wielu godzinach pracy."
         }
       ],
-      outro: "Postaw na wydajnosc i komfort pracy na najwyzszym poziomie. Logitech MX Mechanical to klawiatura dla tych, ktorzy oczekuja perfekcji - od pierwszego nacisniecia klawisza."
+      outro: "Postaw na wydajność i komfort pracy na najwyższym poziomie. Logitech MX Mechanical to klawiatura dla tych, którzy oczekują perfekcji - od pierwszego naciśnięcia klawisza."
     },
     specs: [
-      { label: "Typ przelacznikow", value: "Niskoprofilowe mechaniczne" },
-      { label: "Warianty przelacznikow", value: "Tactile Quiet / Clicky / Linear" },
-      { label: "Podswietlenie", value: "Biale, adaptacyjne" },
-      { label: "Lacznosc", value: "Bluetooth + Logi Bolt USB" },
-      { label: "Liczba urzadzen", value: "Do 3 jednoczesnie" },
-      { label: "Czas pracy baterii", value: "15 dni / 10 miesiecy" },
-      { label: "Ladowanie", value: "USB-C" },
-      { label: "Uklad", value: "Full-size" },
-      { label: "Kompatybilnosc", value: "Windows, macOS, Linux" },
+      { label: "Typ przełączników", value: "Niskoprofilowe mechaniczne" },
+      { label: "Warianty przełączników", value: "Tactile Quiet / Clicky / Linear" },
+      { label: "Podświetlenie", value: "Białe, adaptacyjne" },
+      { label: "Łączność", value: "Bluetooth + Logi Bolt USB" },
+      { label: "Liczba urządzeń", value: "Do 3 jednocześnie" },
+      { label: "Czas pracy baterii", value: "15 dni / 10 miesięcy" },
+      { label: "Ładowanie", value: "USB-C" },
+      { label: "Układ", value: "Full-size" },
+      { label: "Kompatybilność", value: "Windows, macOS, Linux" },
       { label: "Waga", value: "828 g" }
     ],
     price: 549.99,
@@ -157,47 +157,47 @@ export const products: Product[] = [
     id: 3,
     slug: "steelseries-arctis-nova-7x",
     name: "SteelSeries Arctis Nova 7X",
-    description: "Bezprzewodowe sluchawki gamingowe z dzwiekiem przestrzennym 360",
+    description: "Bezprzewodowe słuchawki gamingowe z dźwiękiem przestrzennym 360",
     fullDescription: {
-      intro: "Dzwiek ma kluczowe znaczenie w grze - od dokladnego pozycjonowania przeciwnikow po immersje w swiecie gry. SteelSeries Arctis Nova 7X to sluchawki stworzone z mysla o graczach, ktorzy oczekuja najwyzszej jakosci dzwieku, wygody i niezawodnosci. Jesli zalezy Ci na przewadze nad rywalami i pelnym zanurzeniu w grze, Arctis Nova 7X to wybor, ktory zrobi roznice.",
+      intro: "Dźwięk ma kluczowe znaczenie w grze - od dokładnego pozycjonowania przeciwników po immersję w świecie gry. SteelSeries Arctis Nova 7X to słuchawki stworzone z myślą o graczach, którzy oczekują najwyższej jakości dźwięku, wygody i niezawodności. Jeśli zależy Ci na przewadze nad rywalami i pełnym zanurzeniu w grze, Arctis Nova 7X to wybór, który zrobi różnicę.",
       sections: [
         {
-          title: "Nova Acoustic System - dzwiek, ktory stawia Cie krok przed przeciwnikami",
-          content: "Arctis Nova 7X wyposazono w przetworniki High Fidelity, ktore zapewniaja niesamowita szczegolowsc i glebie dzwieku. Dzieki technologii 360 Spatial Audio uslyszysz kazdy krok przeciwnika i z latwoscia zlokalizujesz jego pozycje - to przewaga, ktora moze przesadzic o zwycięstwie."
+          title: "Nova Acoustic System - dźwięk, który stawia Cię krok przed przeciwnikami",
+          content: "Arctis Nova 7X wyposażono w przetworniki High Fidelity, które zapewniają niesamowitą szczegółowość i głębię dźwięku. Dzięki technologii 360 Spatial Audio usłyszysz każdy krok przeciwnika i z łatwością zlokalizujesz jego pozycję - to przewaga, która może przesądzić o zwycięstwie."
         },
         {
-          title: "Tryb podwojnej lacznosci - graj bez ograniczen",
-          content: "Arctis Nova 7X pozwala na jednoczesne polaczenie bezprzewodowe 2.4 GHz oraz Bluetooth. Mozesz sluchac dzwiekow z konsoli i jednoczesnie rozmawiac na Discordzie z druzyna - bez opoznien i przerw w polaczeniu."
+          title: "Tryb podwójnej łączności - graj bez ograniczeń",
+          content: "Arctis Nova 7X pozwala na jednoczesne połączenie bezprzewodowe 2.4 GHz oraz Bluetooth. Możesz słuchać dźwięków z konsoli i jednocześnie rozmawiać na Discordzie z drużyną - bez opóźnień i przerw w połączeniu."
         },
         {
-          title: "Kompatybilnosc z wieloma platformami",
-          content: "Jedna para sluchawek, pelna kompatybilnosc - Arctis Nova 7X dziala z Xbox Series X|S, PC, PlayStation, Nintendo Switch oraz urzadzeniami mobilnymi. Zmieniaj platformy bez potrzeby konfiguracji - wystarczy jeden przycisk, by kontynuowac gre tam, gdzie ja przerwales."
+          title: "Kompatybilność z wieloma platformami",
+          content: "Jedna para słuchawek, pełna kompatybilność - Arctis Nova 7X działa z Xbox Series X|S, PC, PlayStation, Nintendo Switch oraz urządzeniami mobilnymi. Zmieniaj platformy bez potrzeby konfiguracji - wystarczy jeden przycisk, by kontynuować grę tam, gdzie ją przerwałeś."
         },
         {
-          title: "Dlugi czas pracy na baterii - nawet 38 godzin bez ladowania",
-          content: "Arctis Nova 7X zapewnia do 38 godzin ciaglej pracy na jednym ladowaniu. Krotka przerwa? 15 minut szybkiego ladowania wystarczy na 6 godzin rozgrywki - nie musisz sie martwic o rozladowanie w kluczowym momencie."
+          title: "Długi czas pracy na baterii - nawet 38 godzin bez ładowania",
+          content: "Arctis Nova 7X zapewnia do 38 godzin ciągłej pracy na jednym ładowaniu. Krótka przerwa? 15 minut szybkiego ładowania wystarczy na 6 godzin rozgrywki - nie musisz się martwić o rozładowanie w kluczowym momencie."
         },
         {
-          title: "Wysuwany mikrofon z redukcja szumow",
-          content: "Wyposazony w technologie AI mikrofon ClearCast Gen 2 skutecznie eliminuje halasy w tle, zapewniajac czystosc glosu podczas komunikacji z druzyna. Dzieki funkcji ChatMix mozesz latwo dostosowac proporcje miedzy dzwiekiem z gry a komunikacja glosowa."
+          title: "Wysuwany mikrofon z redukcją szumów",
+          content: "Wyposażony w technologię AI mikrofon ClearCast Gen 2 skutecznie eliminuje hałasy w tle, zapewniając czystość głosu podczas komunikacji z drużyną. Dzięki funkcji ChatMix możesz łatwo dostosować proporcje między dźwiękiem z gry a komunikacją głosową."
         },
         {
           title: "Wygoda nawet podczas wielogodzinnych sesji",
-          content: "Palak ComfortMAX z regulacja na czterech poziomach, piankowe nauszniki AirWeave Memory Foam i lekka konstrukcja sprawiaja, ze Arctis Nova 7X dopasowuje sie do ksztaltu glowy i nie powoduje dyskomfortu nawet po wielu godzinach gry."
+          content: "Pałąk ComfortMAX z regulacją na czterech poziomach, piankowe nauszniki AirWeave Memory Foam i lekka konstrukcja sprawiają, że Arctis Nova 7X dopasowuje się do kształtu głowy i nie powoduje dyskomfortu nawet po wielu godzinach gry."
         }
       ],
-      outro: "Precyzja dzwieku, wygoda i niezawodnosc - Arctis Nova 7X to sprzet, ktory podniesie Twoje wyniki i pozwoli w pelni zanurzyc sie w grze. Graj jak zawodowiec, sluchaj jak mistrz - i wygrywaj."
+      outro: "Precyzja dźwięku, wygoda i niezawodność - Arctis Nova 7X to sprzęt, który podniesie Twoje wyniki i pozwoli w pełni zanurzyć się w grze. Graj jak zawodowiec, słuchaj jak mistrz - i wygrywaj."
     },
     specs: [
-      { label: "Typ przetwornikow", value: "High Fidelity 40mm" },
+      { label: "Typ przetworników", value: "High Fidelity 40mm" },
       { label: "Pasmo przenoszenia", value: "20 Hz - 22 000 Hz" },
       { label: "Impedancja", value: "36 Ohm" },
-      { label: "Czulosc", value: "93 dBSPL" },
-      { label: "Lacznosc bezprzewodowa", value: "2.4 GHz + Bluetooth 5.0" },
+      { label: "Czułość", value: "93 dBSPL" },
+      { label: "Łączność bezprzewodowa", value: "2.4 GHz + Bluetooth 5.0" },
       { label: "Czas pracy baterii", value: "Do 38 godzin" },
-      { label: "Szybkie ladowanie", value: "15 min = 6 godzin" },
+      { label: "Szybkie ładowanie", value: "15 min = 6 godzin" },
       { label: "Mikrofon", value: "ClearCast Gen 2 z AI" },
-      { label: "Kompatybilnosc", value: "Xbox, PC, PS, Switch, Mobile" },
+      { label: "Kompatybilność", value: "Xbox, PC, PS, Switch, Mobile" },
       { label: "Waga", value: "325 g" }
     ],
     price: 599.99,
@@ -210,7 +210,7 @@ export const products: Product[] = [
       "/products/headphones/connectors.JPG",
       "/products/headphones/macro1.JPG",
     ],
-    category: "Sluchawki",
+    category: "Słuchawki",
     categorySlug: "sluchawki",
     isFeatured: true,
   },
@@ -220,40 +220,40 @@ export const products: Product[] = [
     name: "Elgato Stream Deck Mk.2",
     description: "Kontroler do streamowania z 15 programowalnymi przyciskami LCD",
     fullDescription: {
-      intro: "Stream Deck Mk.2 to nie tylko gadżet - to narzedzie, ktore zmienia sposob, w jaki prowadzisz transmisje. Dla streamerow liczy sie plynnosc, profesjonalizm i pelna kontrola nad kazdym aspektem streamu. Ten kontroler to centrum dowodzenia, ktore pozwala skupic sie na tresci, a nie na klikaniu w okienka.",
+      intro: "Stream Deck Mk.2 to nie tylko gadżet - to narzędzie, które zmienia sposób, w jaki prowadzisz transmisje. Dla streamerów liczy się płynność, profesjonalizm i pełna kontrola nad każdym aspektem streamu. Ten kontroler to centrum dowodzenia, które pozwala skupić się na treści, a nie na klikaniu w okienka.",
       sections: [
         {
-          title: "Natychmiastowy dostep do wszystkiego, co wazne",
-          content: "15 w pelni konfigurowalnych przyciskow LCD umozliwia blyskawiczne uruchamianie scen, efektow dzwiekowych, alertow, kamer czy czatu - bez przelaczania sie miedzy oknami. Jedno klikniecie i dzialasz dalej."
+          title: "Natychmiastowy dostęp do wszystkiego, co ważne",
+          content: "15 w pełni konfigurowalnych przycisków LCD umożliwia błyskawiczne uruchamianie scen, efektów dźwiękowych, alertów, kamer czy czatu - bez przełączania się między oknami. Jedno kliknięcie i działasz dalej."
         },
         {
-          title: "Pelna personalizacja - Twoj stream, Twoje zasady",
-          content: "Dostosuj wyglad przyciskow, ikony, tla i uklady - wszystko po to, by Stream Deck odzwierciedlal Twoj styl. Mozesz tworzyc profile dla transmisji, roznych typow gier czy nawet konkretnych wydarzen."
+          title: "Pełna personalizacja - Twój stream, Twoje zasady",
+          content: "Dostosuj wygląd przycisków, ikony, tła i układy - wszystko po to, by Stream Deck odzwierciedlał Twój styl. Możesz tworzyć profile dla transmisji, różnych typów gier czy nawet konkretnych wydarzeń."
         },
         {
-          title: "Integracja z popularnymi narzedziami",
-          content: "Stream Deck Mk.2 wspolpracuje z OBS Studio, Twitch, YouTube, Discord, Spotify, Elgato Game Capture i wieloma innymi aplikacjami. Nie musisz nic kombinowac - wszystko dziala od razu, prosto z pudelka."
+          title: "Integracja z popularnymi narzędziami",
+          content: "Stream Deck Mk.2 współpracuje z OBS Studio, Twitch, YouTube, Discord, Spotify, Elgato Game Capture i wieloma innymi aplikacjami. Nie musisz nic kombinować - wszystko działa od razu, prosto z pudełka."
         },
         {
-          title: "Funkcjonalnosc, ktora wykracza poza stream",
-          content: "To nie tylko narzedzie do transmisji. Uzywaj go jako centrum sterowania do codziennej pracy: skroty klawiszowe, makra, sterowanie oswietleniem, uruchamianie aplikacji - jedno urzadzenie, wiele mozliwosci."
+          title: "Funkcjonalność, która wykracza poza stream",
+          content: "To nie tylko narzędzie do transmisji. Używaj go jako centrum sterowania do codziennej pracy: skróty klawiszowe, makra, sterowanie oświetleniem, uruchamianie aplikacji - jedno urządzenie, wiele możliwości."
         },
         {
           title: "Nowy design i zdejmowana podstawka",
-          content: "Wersja Mk.2 to nie tylko nowe funkcje, ale tez nowy wyglad. Obudowa z wymiennym frontem i odpinana podstawka sprawiaja, ze urzadzenie nie tylko dobrze dziala, ale i dobrze wyglada - niezaleznie od tego, czy stoisz przed kamera, czy nie."
+          content: "Wersja Mk.2 to nie tylko nowe funkcje, ale też nowy wygląd. Obudowa z wymiennym frontem i odpinana podstawka sprawiają, że urządzenie nie tylko dobrze działa, ale i dobrze wygląda - niezależnie od tego, czy stoisz przed kamerą, czy nie."
         }
       ],
-      outro: "Jesli chcesz, by Twoje transmisje byly plynne, dynamiczne i technicznie bezbledne, Stream Deck Mk.2 jest narzedziem, ktore powinno znalezc sie na Twoim biurku. Wyrozni sie jakoscia, nie komplikacja."
+      outro: "Jeśli chcesz, by Twoje transmisje były płynne, dynamiczne i technicznie bezbłędne, Stream Deck Mk.2 jest narzędziem, które powinno znaleźć się na Twoim biurku. Wyróżni się jakością, nie komplikacją."
     },
     specs: [
-      { label: "Liczba przyciskow", value: "15 LCD" },
-      { label: "Rozdzielczosc przyciskow", value: "72x72 piksele" },
-      { label: "Lacznosc", value: "USB 2.0" },
+      { label: "Liczba przycisków", value: "15 LCD" },
+      { label: "Rozdzielczość przycisków", value: "72x72 piksele" },
+      { label: "Łączność", value: "USB 2.0" },
       { label: "Wymiary", value: "118 x 84 x 25 mm" },
       { label: "Waga", value: "145 g" },
       { label: "Podstawka", value: "Zdejmowana, magnetyczna" },
       { label: "Panel przedni", value: "Wymienny" },
-      { label: "Kompatybilnosc", value: "Windows 10+, macOS 10.15+" },
+      { label: "Kompatybilność", value: "Windows 10+, macOS 10.15+" },
       { label: "Integracje", value: "OBS, Twitch, YouTube, Discord" },
       { label: "Oprogramowanie", value: "Stream Deck Software" }
     ],
@@ -274,44 +274,44 @@ export const products: Product[] = [
     id: 5,
     slug: "yubikey-5c-nfc-fips",
     name: "YubiKey 5C NFC FIPS",
-    description: "Klucz bezpieczenstwa USB-C z NFC i certyfikatem FIPS 140-2",
+    description: "Klucz bezpieczeństwa USB-C z NFC i certyfikatem FIPS 140-2",
     fullDescription: {
-      intro: "Dla managera odpowiedzialnego za dostep do poufnych danych, bezpieczenstwo nie moze byc opcja - musi byc standardem. YubiKey 5C NFC FIPS to sprzetowy klucz uwierzytelniajacy klasy korporacyjnej, certyfikowany zgodnie z rygorystycznym standardem FIPS 140-2. To nie tylko technologia - to gwarancja, ze kontrolujesz dostep do kluczowych zasobow firmowych z poziomem zabezpieczen godnym instytucji rzadowych i finansowych.",
+      intro: "Dla managera odpowiedzialnego za dostęp do poufnych danych, bezpieczeństwo nie może być opcją - musi być standardem. YubiKey 5C NFC FIPS to sprzętowy klucz uwierzytelniający klasy korporacyjnej, certyfikowany zgodnie z rygorystycznym standardem FIPS 140-2. To nie tylko technologia - to gwarancja, że kontrolujesz dostęp do kluczowych zasobów firmowych z poziomem zabezpieczeń godnym instytucji rządowych i finansowych.",
       sections: [
         {
-          title: "Uwierzytelnianie sprzetowe - bez podatnosci na phishing",
-          content: "YubiKey eliminuje ryzyko przejecia danych logowania przez zlosliwe oprogramowanie czy ataki typu phishing. Logowanie wymaga fizycznego klucza, co znaczaco podnosi poziom ochrony kont sluzbowych, systemow firmowych i danych klientow."
+          title: "Uwierzytelnianie sprzętowe - bez podatności na phishing",
+          content: "YubiKey eliminuje ryzyko przejęcia danych logowania przez złośliwe oprogramowanie czy ataki typu phishing. Logowanie wymaga fizycznego klucza, co znacząco podnosi poziom ochrony kont służbowych, systemów firmowych i danych klientów."
         },
         {
-          title: "Zgodnosc z FIPS 140-2 - standard bezpieczenstwa dla instytucji",
-          content: "Model FIPS spelnia najwyzsze normy bezpieczenstwa wymagane m.in. w sektorze finansowym, prawnym i administracji publicznej. Dla managerow odpowiedzialnych za zgodnosc i audyty to nie tylko przewaga, ale i wymog."
+          title: "Zgodność z FIPS 140-2 - standard bezpieczeństwa dla instytucji",
+          content: "Model FIPS spełnia najwyższe normy bezpieczeństwa wymagane m.in. w sektorze finansowym, prawnym i administracji publicznej. Dla managerów odpowiedzialnych za zgodność i audyty to nie tylko przewaga, ale i wymóg."
         },
         {
-          title: "Wsparcie dla wielu protokolow jednoczesnie",
-          content: "YubiKey 5C NFC obsluguje FIDO2, U2F, OTP, PIV (smart card) i OpenPGP - co pozwala wdrozyc jeden klucz jako uniwersalne narzedzie do autoryzacji w roznych systemach i aplikacjach, w tym Microsoft 365, Google Workspace, VPN, systemy logowania SSO i wiele innych."
+          title: "Wsparcie dla wielu protokołów jednocześnie",
+          content: "YubiKey 5C NFC obsługuje FIDO2, U2F, OTP, PIV (smart card) i OpenPGP - co pozwala wdrożyć jeden klucz jako uniwersalne narzędzie do autoryzacji w różnych systemach i aplikacjach, w tym Microsoft 365, Google Workspace, VPN, systemy logowania SSO i wiele innych."
         },
         {
-          title: "USB-C + NFC - maksymalna elastycznosc",
-          content: "Dzieki zlaczom USB-C i technologii NFC klucz dziala zarowno z komputerami, jak i urzadzeniami mobilnymi. Bez wzgledu na to, czy pracujesz przy biurku, czy logujesz sie w terenie - dostep masz zawsze pod reka, bez koniecznosci korzystania z aplikacji czy baterii."
+          title: "USB-C + NFC - maksymalna elastyczność",
+          content: "Dzięki złączom USB-C i technologii NFC klucz działa zarówno z komputerami, jak i urządzeniami mobilnymi. Bez względu na to, czy pracujesz przy biurku, czy logujesz się w terenie - dostęp masz zawsze pod ręką, bez konieczności korzystania z aplikacji czy baterii."
         },
         {
-          title: "Brak zaleznosci od chmury i aplikacji",
-          content: "YubiKey dziala lokalnie - bez potrzeby polaczenia z internetem czy instalowania dodatkowego oprogramowania, bez ryzyka, ze klucze wycieka. To szybki i niezawodny sposob na logowanie, ktory nie generuje dodatkowych ryzyk ani punktow awarii."
+          title: "Brak zależności od chmury i aplikacji",
+          content: "YubiKey działa lokalnie - bez potrzeby połączenia z internetem czy instalowania dodatkowego oprogramowania, bez ryzyka, że klucze wyciekną. To szybki i niezawodny sposób na logowanie, który nie generuje dodatkowych ryzyk ani punktów awarii."
         }
       ],
-      outro: "Zamiast ufac haslom, wybierz fizyczne zabezpieczenie, ktore realnie redukuje ryzyko. Jako manager, odpowiadasz za bezpieczenstwo zespolu, danych i dostepu. YubiKey 5C NFC FIPS pozwala wypelnic te role z pelna odpowiedzialnoscia - bez zbednych komplikacji, za to z najwyzszym poziomem ochrony.",
-      note: "Pendrive nie znajduje sie w zestawie. Zostal uzyty WYLACZNIE w celu pokazowym porownania rozmiarow."
+      outro: "Zamiast ufać hasłom, wybierz fizyczne zabezpieczenie, które realnie redukuje ryzyko. Jako manager, odpowiadasz za bezpieczeństwo zespołu, danych i dostępu. YubiKey 5C NFC FIPS pozwala wypełnić tę rolę z pełną odpowiedzialnością - bez zbędnych komplikacji, za to z najwyższym poziomem ochrony.",
+      note: "Pendrive nie znajduje się w zestawie. Został użyty WYŁĄCZNIE w celu pokazowym porównania rozmiarów."
     },
     specs: [
-      { label: "Zlacze", value: "USB-C" },
+      { label: "Złącze", value: "USB-C" },
       { label: "NFC", value: "Tak" },
       { label: "Certyfikat", value: "FIPS 140-2 Level 2" },
-      { label: "Protokoly", value: "FIDO2, U2F, OTP, PIV, OpenPGP" },
+      { label: "Protokoły", value: "FIDO2, U2F, OTP, PIV, OpenPGP" },
       { label: "Wymiary", value: "18 x 45 x 5 mm" },
       { label: "Waga", value: "3 g" },
-      { label: "Wodoodpornosc", value: "IP68" },
+      { label: "Wodoodporność", value: "IP68" },
       { label: "Bateria", value: "Nie wymaga" },
-      { label: "Kompatybilnosc", value: "Windows, macOS, Linux, iOS, Android" },
+      { label: "Kompatybilność", value: "Windows, macOS, Linux, iOS, Android" },
       { label: "Producent", value: "Yubico (Szwecja)" }
     ],
     price: 399.99,
@@ -322,7 +322,7 @@ export const products: Product[] = [
       "/products/yubikey/IMG_20250601_091740.jpg",
       "/products/yubikey/IMG_20250601_091823.jpg",
     ],
-    category: "Bezpieczenstwo",
+    category: "Bezpieczeństwo",
     categorySlug: "bezpieczenstwo",
     isFeatured: true,
   },
@@ -330,7 +330,50 @@ export const products: Product[] = [
     id: 6,
     slug: "logitech-mx-master-3s",
     name: "Logitech MX Master 3S",
-    description: "Zaawansowana mysz bezprzewodowa dla profesjonalistow",
+    description: "Bezprzewodowa mysz gamingowa z precyzją na poziomie turniejowym",
+    fullDescription: {
+      intro: "W świecie gamingu liczy się każda sekunda i każdy ruch. Logitech G502 Lightspeed to mysz stworzona z myślą o graczach, którzy wymagają absolutnej precyzji, niezawodności i szybkości reakcji – bez żadnych kompromisów, również w kwestii łączności.",
+      sections: [
+        {
+          title: "Bezprzewodowa technologia LIGHTSPEED – wolność bez opóźnień",
+          content: "Zapomnij o przewodach i opóźnieniach. LIGHTSPEED to ultraszybka technologia bezprzewodowa, która oferuje niezawodność i czas reakcji porównywalny z najlepszymi myszami przewodowymi. Opóźnienie na poziomie 1 ms idealnie sprawdzi się do dynamicznych rozgrywek, gdzie liczy się każda milisekunda."
+        },
+        {
+          title: "Sensor HERO 25K – maksymalna precyzja",
+          content: "G502 Lightspeed została wyposażona w sensor HERO 25K, oferujący rozdzielczość do 25 600 DPI bez wygładzania, akceleracji czy filtrów. Niezależnie od stylu gry – agresywnego flickowania czy precyzyjnego celowania – zawsze trafisz dokładnie tam, gdzie chcesz."
+        },
+        {
+          title: "11 programowalnych przycisków – pełna kontrola",
+          content: "Możesz przypisać makra, skróty i komendy do każdego z 11 przycisków. G502 Lightspeed daje Ci pełną elastyczność – idealnie sprawdzi się w FPS-ach, MMO i grach strategicznych, gdzie każda funkcja jest na wagę złota."
+        },
+        {
+          title: "Regulowana waga – dopasuj mysz do siebie",
+          content: "Dzięki dołączonym ciężarkom możesz precyzyjnie dostosować wagę myszy do własnych preferencji w zakresie od 114g do 130 g. Lżejsza do szybkich ruchów? Cięższa dla stabilności? Ty decydujesz."
+        },
+        {
+          title: "Długi czas pracy na baterii",
+          content: "Jedno ładowanie wystarczy nawet na 60 godzin gry. A jeśli korzystasz z bezprzewodowej podkładki Logitech PowerPlay, możesz grać bez przerwy – mysz ładuje się automatycznie podczas użytkowania."
+        },
+        {
+          title: "Kultowy design, legendarna jakość",
+          content: "G502 to nie tylko wydajność – to również ergonomia, z której znana jest ta linia. Kształt idealnie dopasowany do dłoni, gumowe uchwyty boczne i solidna konstrukcja sprawiają, że granie jest komfortowe nawet po wielu godzinach."
+        }
+      ],
+      outro: "Jeśli szukasz myszy, która zapewni Ci przewagę na każdym poziomie gry, G502 Lightspeed to pewny wybór. Szybkość, precyzja i niezawodność – bez kabla i bez kompromisów."
+    },
+    specs: [
+      { label: "Typ sensora", value: "HERO 25K (optyczny)" },
+      { label: "Zakres DPI", value: "100 – 25 600 DPI" },
+      { label: "Częstotliwość raportowania", value: "1000 Hz (1 ms)" },
+      { label: "Liczba przycisków", value: "11 (programowalnych)" },
+      { label: "Podświetlenie", value: "LIGHTSYNC RGB" },
+      { label: "Waga", value: "114 g (bez obciążników)" },
+      { label: "Dodatkowe obciążniki", value: "5 × 3,6 g" },
+      { label: "Czas pracy na baterii", value: "Do 60 h (z wyłączonym RGB)" },
+      { label: "Ładowanie", value: "USB lub POWERPLAY" },
+      { label: "Połączenie", value: "Bezprzewodowe Lightspeed 2.4 GHz" },
+      { label: "Kompatybilność", value: "Windows, macOS, ChromeOS, Linux" }
+    ],
     price: 449.99,
     oldPrice: 549.99,
     image: "/products/mouse/DSCN0257_2.jpg",

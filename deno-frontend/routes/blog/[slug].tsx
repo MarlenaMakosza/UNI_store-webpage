@@ -10,10 +10,10 @@ export default function ArticlePage(props: PageProps) {
       <Layout>
         <div class="min-h-screen bg-gray-50 py-16">
           <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">Artykul nie znaleziony</h1>
-            <p class="text-gray-500 mb-8">Przepraszamy, nie znalezlismy szukanego artykulu.</p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Artykuł nie znaleziony</h1>
+            <p class="text-gray-500 mb-8">Przepraszamy, nie znaleźliśmy szukanego artykułu.</p>
             <a href="/blog" class="inline-block px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
-              Wroc do bloga
+              Wróć do bloga
             </a>
           </div>
         </div>

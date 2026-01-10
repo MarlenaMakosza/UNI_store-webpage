@@ -11,10 +11,10 @@ export default function CategoriesPage() {
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center">
               <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                <span class="gradient-text">Kategorie produktow</span>
+                <span class="gradient-text">Kategorie produktów</span>
               </h1>
               <p class="text-xl text-gray-600">
-                Przegladaj nasze produkty wedlug kategorii
+                Przeglądaj nasze produkty według kategorii
               </p>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function CategoriesPage() {
                       <h3 class="text-xl font-bold text-gray-800 mb-2">{category.name}</h3>
                       <p class="text-gray-500 text-sm mb-4">{category.description}</p>
                       <div class="flex items-center justify-between">
-                        <span class="text-primary font-semibold">{categoryProducts.length} produktow</span>
+                        <span class="text-primary font-semibold">{categoryProducts.length} produktów</span>
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>

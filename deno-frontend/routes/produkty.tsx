@@ -6,7 +6,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
     <a href={`/produkty/${product.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
       <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center relative">
         {product.isNew && (
-          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded z-10">NOWOSC</span>
+          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded z-10">NOWOŚĆ</span>
         )}
         {product.oldPrice && (
           <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded z-10">PROMOCJA</span>
@@ -31,9 +31,9 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         <p class="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
         <div class="flex items-center justify-between mt-4">
           <div>
-            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zl</span>
+            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zł</span>
             {product.oldPrice && (
-              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zl</span>
+              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zł</span>
             )}
           </div>
           <button class="px-4 py-2 rounded-lg btn-gradient text-white text-sm font-semibold">
@@ -61,7 +61,7 @@ export default function ProductsPage() {
                   </svg>
                   <input
                     type="search"
-                    placeholder="Szukaj produktow..."
+                    placeholder="Szukaj produktów..."
                     class="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>

@@ -11,11 +11,11 @@ function HeroSection() {
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
             <span class="gradient-text">Elektronika</span>
             <br />
-            <span class="text-gray-800">najwyzszej jakosci</span>
+            <span class="text-gray-800">najwyższej jakości</span>
           </h1>
           <p class="text-xl text-gray-600 mb-8">
-            Odkryj najnowsze produkty z swiata elektroniki w konkurencyjnych cenach.
-            Gwarantujemy wysoka jakosc i szybka dostawe.
+            Odkryj najnowsze produkty ze świata elektroniki w konkurencyjnych cenach.
+            Gwarantujemy wysoką jakość i szybką dostawę.
           </p>
           <a href="/produkty" class="inline-flex items-center px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
             Zobacz produkty
@@ -34,7 +34,7 @@ function ProductCard({ product }: { product: typeof products[0] }) {
     <a href={`/produkty/${product.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
       <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center relative">
         {product.isNew && (
-          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded z-10">NOWOSC</span>
+          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded z-10">NOWOŚĆ</span>
         )}
         {product.oldPrice && (
           <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded z-10">PROMOCJA</span>
@@ -59,9 +59,9 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         <p class="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
         <div class="flex items-center justify-between mt-4">
           <div>
-            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zl</span>
+            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zł</span>
             {product.oldPrice && (
-              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zl</span>
+              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zł</span>
             )}
           </div>
           <span class="px-4 py-2 rounded-lg btn-gradient text-white text-sm font-semibold">
@@ -80,7 +80,7 @@ function FeaturedProducts() {
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold text-gray-800">Wyroznione produkty</h2>
+          <h2 class="text-3xl font-bold text-gray-800">Wyróżnione produkty</h2>
           <a href="/produkty" class="inline-flex items-center px-4 py-2 rounded-lg border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-colors">
             Zobacz wszystkie
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,12 +134,12 @@ function NewsletterSection() {
           </div>
 
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Badz na biezaco
+            Bądź na bieżąco
           </h2>
 
           <p class="text-gray-600 mb-8">
-            Zapisz sie do naszego newslettera i otrzymuj informacje o nowosciach,
-            promocjach i ekskluzywnych ofertach prosto na swoja skrzynke.
+            Zapisz się do naszego newslettera i otrzymuj informacje o nowościach,
+            promocjach i ekskluzywnych ofertach prosto na swoją skrzynkę.
           </p>
 
           <form class="max-w-md mx-auto">
@@ -150,16 +150,16 @@ function NewsletterSection() {
                 </svg>
                 <input
                   type="email"
-                  placeholder="Twoj adres e-mail"
+                  placeholder="Twój adres e-mail"
                   class="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
               <button type="submit" class="px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
-                Zapisz sie
+                Zapisz się
               </button>
             </div>
             <p class="text-xs text-gray-500 mt-3">
-              Szanujemy Twoja prywatnosc. Mozesz zrezygnowac z subskrypcji w kazdej chwili.
+              Szanujemy Twoją prywatność. Możesz zrezygnować z subskrypcji w każdej chwili.
             </p>
           </form>
         </div>
@@ -182,23 +182,23 @@ function WhyUsSection() {
               <span class="text-2xl">📦</span>
             </div>
             <h3 class="text-xl font-semibold text-gray-800 mb-2">Szybka dostawa</h3>
-            <p class="text-gray-500">Realizujemy zamowienia w 24 godziny</p>
+            <p class="text-gray-500">Realizujemy zamówienia w 24 godziny</p>
           </div>
 
           <div class="text-center">
             <div class="w-16 h-16 btn-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
               <span class="text-2xl">✓</span>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Gwarancja jakosci</h3>
-            <p class="text-gray-500">Wszystkie produkty objete gwarancja producenta</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Gwarancja jakości</h3>
+            <p class="text-gray-500">Wszystkie produkty objęte gwarancją producenta</p>
           </div>
 
           <div class="text-center">
             <div class="w-16 h-16 btn-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
               <span class="text-2xl">💳</span>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Bezpieczne platnosci</h3>
-            <p class="text-gray-500">Akceptujemy wszystkie najpopularniejsze metody platnosci</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Bezpieczne płatności</h3>
+            <p class="text-gray-500">Akceptujemy wszystkie najpopularniejsze metody płatności</p>
           </div>
         </div>
       </div>
