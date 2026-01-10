@@ -80,11 +80,11 @@ export default function NewsletterPopup() {
 
                 {/* Header */}
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-3">
-                  <span class="gradient-text">Dolacz do nas!</span>
+                  <span class="gradient-text">Dołącz do nas!</span>
                 </h2>
 
                 <p class="text-gray-600 text-center mb-6">
-                  Zapisz sie do newslettera i otrzymuj informacje o nowosciach, promocjach i ekskluzywnych ofertach.
+                  Zapisz się do newslettera i otrzymuj informacje o nowościach, promocjach i ekskluzywnych ofertach.
                 </p>
 
                 {/* Form */}
@@ -97,7 +97,7 @@ export default function NewsletterPopup() {
                       type="email"
                       value={email}
                       onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
-                      placeholder="Twoj adres e-mail"
+                      placeholder="Twój adres e-mail"
                       required
                       class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                     />
@@ -108,12 +108,12 @@ export default function NewsletterPopup() {
                     disabled={isSubmitting}
                     class="w-full px-6 py-3 rounded-lg btn-gradient text-white font-semibold disabled:opacity-50"
                   >
-                    {isSubmitting ? "Zapisywanie..." : "Zapisz sie"}
+                    {isSubmitting ? "Zapisywanie..." : "Zapisz się"}
                   </button>
                 </form>
 
                 <p class="text-xs text-gray-500 text-center mt-4">
-                  Mozesz zrezygnowac z subskrypcji w kazdej chwili. Szanujemy Twoja prywatnosc.
+                  Możesz zrezygnować z subskrypcji w każdej chwili. Szanujemy Twoją prywatność.
                 </p>
               </>
             ) : (
@@ -123,8 +123,8 @@ export default function NewsletterPopup() {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Dziekujemy!</h3>
-                <p class="text-gray-600">Zostales pomyslnie zapisany do newslettera.</p>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Dziękujemy!</h3>
+                <p class="text-gray-600">Zostałeś pomyślnie zapisany do newslettera.</p>
               </div>
             )}
           </div>

@@ -13,7 +13,7 @@ export default function Header() {
 
           <nav class="hidden md:flex items-center space-x-8">
             <a href="/" class="text-gray-600 hover:text-primary transition-colors font-medium">
-              Strona glowna
+              Strona główna
             </a>
             <a href="/produkty" class="text-gray-600 hover:text-primary transition-colors font-medium">
               Produkty
