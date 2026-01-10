@@ -1,0 +1,22 @@
+{
+  "build_id": "ebc2daee213cb4c6dbbbe51587be5da499dbac4d",
+  "files": {
+    "main.js": [
+      "chunk-H4FMBZ3H.js"
+    ],
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-4EYXFPHT.js",
+      "chunk-H4FMBZ3H.js"
+    ],
+    "island-newsletterpopup.js": [
+      "chunk-4EYXFPHT.js",
+      "chunk-H4FMBZ3H.js"
+    ],
+    "chunk-4EYXFPHT.js": [
+      "chunk-H4FMBZ3H.js"
+    ],
+    "chunk-H4FMBZ3H.js": [],
+    "metafile.json": []
+  }
+}
