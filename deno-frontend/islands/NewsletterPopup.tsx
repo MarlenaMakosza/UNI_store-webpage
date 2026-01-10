@@ -47,20 +47,20 @@ export default function NewsletterPopup() {
     <>
       {/* Backdrop */}
       <div
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-fade-in"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 animate-fade-in"
         onClick={handleClose}
       />
 
       {/* Popup */}
       <div class="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
-        <div class="bg-gray-900 border-2 border-neon-violet rounded-2xl shadow-2xl max-w-md w-full pointer-events-auto animate-scale-in relative overflow-hidden">
+        <div class="bg-white border-2 border-primary rounded-2xl shadow-2xl max-w-md w-full pointer-events-auto animate-scale-in relative overflow-hidden">
           {/* Background gradient effect */}
-          <div class="absolute inset-0 bg-gradient-to-br from-neon-violet/10 via-transparent to-electric-blue/10 pointer-events-none" />
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-blue-50 pointer-events-none" />
 
           {/* Close button */}
           <button
             onClick={handleClose}
-            class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors z-10"
             aria-label="Zamknij"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function NewsletterPopup() {
                   <span class="gradient-text">Dolacz do nas!</span>
                 </h2>
 
-                <p class="text-gray-300 text-center mb-6">
+                <p class="text-gray-600 text-center mb-6">
                   Zapisz sie do newslettera i otrzymuj informacje o nowosciach, promocjach i ekskluzywnych ofertach.
                 </p>
 
@@ -99,7 +99,7 @@ export default function NewsletterPopup() {
                       onInput={(e) => setEmail((e.target as HTMLInputElement).value)}
                       placeholder="Twoj adres e-mail"
                       required
-                      class="w-full pl-12 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-violet transition-colors"
+                      class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
 
@@ -123,8 +123,8 @@ export default function NewsletterPopup() {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-2">Dziekujemy!</h3>
-                <p class="text-gray-300">Zostales pomyslnie zapisany do newslettera.</p>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Dziekujemy!</h3>
+                <p class="text-gray-600">Zostales pomyslnie zapisany do newslettera.</p>
               </div>
             )}
           </div>

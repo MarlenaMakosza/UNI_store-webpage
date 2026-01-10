@@ -19,10 +19,10 @@ export default function ArticlePage(props: PageProps) {
   if (!article) {
     return (
       <Layout>
-        <div class="min-h-screen bg-deep-black py-16">
+        <div class="min-h-screen bg-gray-50 py-16">
           <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4">Artykul nie znaleziony</h1>
-            <p class="text-gray-400 mb-8">Przepraszamy, nie znalezlismy szukanego artykulu.</p>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Artykul nie znaleziony</h1>
+            <p class="text-gray-500 mb-8">Przepraszamy, nie znalezlismy szukanego artykulu.</p>
             <a href="/blog" class="inline-block px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
               Wroc do bloga
             </a>
@@ -36,26 +36,26 @@ export default function ArticlePage(props: PageProps) {
 
   return (
     <Layout>
-      <div class="min-h-screen bg-deep-black">
+      <div class="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section class="relative bg-gradient-to-br from-deep-black via-gray-900 to-deep-black py-16">
+        <section class="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-16">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="mb-6">
               <ol class="flex items-center space-x-2 text-sm">
-                <li><a href="/" class="text-gray-400 hover:text-neon-violet">Strona glowna</a></li>
-                <li class="text-gray-600">/</li>
-                <li><a href="/blog" class="text-gray-400 hover:text-neon-violet">Blog</a></li>
-                <li class="text-gray-600">/</li>
-                <li class="text-neon-violet line-clamp-1">{article.title}</li>
+                <li><a href="/" class="text-gray-500 hover:text-primary">Strona glowna</a></li>
+                <li class="text-gray-400">/</li>
+                <li><a href="/blog" class="text-gray-500 hover:text-primary">Blog</a></li>
+                <li class="text-gray-400">/</li>
+                <li class="text-primary line-clamp-1">{article.title}</li>
               </ol>
             </nav>
 
             <div class="max-w-4xl">
               <div class="flex items-center gap-4 mb-4">
-                <span class="text-xs font-semibold text-neon-violet uppercase tracking-wider bg-neon-violet/10 px-3 py-1 rounded-full">
+                <span class="text-xs font-semibold text-primary uppercase tracking-wider bg-purple-100 px-3 py-1 rounded-full">
                   {article.category}
                 </span>
-                <span class="text-gray-400 text-sm flex items-center">
+                <span class="text-gray-500 text-sm flex items-center">
                   <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -67,8 +67,8 @@ export default function ArticlePage(props: PageProps) {
                 </span>
               </div>
 
-              <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">{article.title}</h1>
-              <p class="text-xl text-gray-300">{article.subtitle}</p>
+              <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">{article.title}</h1>
+              <p class="text-xl text-gray-600">{article.subtitle}</p>
             </div>
           </div>
         </section>
@@ -77,7 +77,7 @@ export default function ArticlePage(props: PageProps) {
         <section class="py-8">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
-              <div class="h-64 md:h-96 bg-gradient-to-br from-neon-violet/20 to-electric-blue/20 rounded-2xl flex items-center justify-center text-9xl">
+              <div class="h-64 md:h-96 bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl flex items-center justify-center text-9xl">
                 {getIcon(article.featuredImage)}
               </div>
             </div>
@@ -89,14 +89,14 @@ export default function ArticlePage(props: PageProps) {
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
               <div
-                class="prose prose-invert prose-lg max-w-none
-                  prose-headings:text-white prose-headings:font-bold
+                class="prose prose-lg max-w-none
+                  prose-headings:text-gray-800 prose-headings:font-bold
                   prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4
                   prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3
-                  prose-p:text-gray-300 prose-p:leading-relaxed
-                  prose-li:text-gray-300
-                  prose-a:text-neon-violet prose-a:no-underline hover:prose-a:text-electric-blue
-                  prose-strong:text-white
+                  prose-p:text-gray-600 prose-p:leading-relaxed
+                  prose-li:text-gray-600
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:text-secondary
+                  prose-strong:text-gray-800
                 "
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
@@ -106,18 +106,18 @@ export default function ArticlePage(props: PageProps) {
 
         {/* Other Articles */}
         {otherArticles.length > 0 && (
-          <section class="py-16 bg-gray-900">
+          <section class="py-16 bg-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 class="text-2xl font-bold text-white mb-8">Inne artykuly</h2>
+              <h2 class="text-2xl font-bold text-gray-800 mb-8">Inne artykuly</h2>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {otherArticles.map((a) => (
-                  <a key={a.id} href={`/blog/${a.slug}`} class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover block">
-                    <div class="h-32 bg-gradient-to-br from-neon-violet/20 to-electric-blue/20 flex items-center justify-center text-4xl">
+                  <a key={a.id} href={`/blog/${a.slug}`} class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
+                    <div class="h-32 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center text-4xl">
                       {getIcon(a.featuredImage)}
                     </div>
                     <div class="p-4">
-                      <span class="text-xs text-neon-violet font-semibold uppercase">{a.category}</span>
-                      <h3 class="font-bold text-white mt-1 line-clamp-2">{a.title}</h3>
+                      <span class="text-xs text-primary font-semibold uppercase">{a.category}</span>
+                      <h3 class="font-bold text-gray-800 mt-1 line-clamp-2">{a.title}</h3>
                     </div>
                   </a>
                 ))}

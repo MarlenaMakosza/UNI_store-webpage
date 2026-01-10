@@ -58,9 +58,9 @@ export default function DeliveryPage() {
 
   return (
     <Layout>
-      <div class="min-h-screen bg-deep-black">
+      <div class="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section class="relative bg-gradient-to-br from-deep-black via-gray-900 to-deep-black py-16 md:py-24">
+        <section class="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-16 md:py-24">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center">
               <div class="inline-flex items-center justify-center w-20 h-20 btn-gradient rounded-full mb-6">
@@ -69,7 +69,7 @@ export default function DeliveryPage() {
               <h1 class="text-4xl md:text-5xl font-bold mb-6">
                 <span class="gradient-text">Dostawa</span>
               </h1>
-              <p class="text-xl text-gray-300">
+              <p class="text-xl text-gray-600">
                 Wybierz najwygodniejsza dla Ciebie metode dostawy
               </p>
             </div>
@@ -81,23 +81,23 @@ export default function DeliveryPage() {
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {deliveryMethods.map((method, index) => (
-                <div key={index} class="bg-gray-900 rounded-xl p-8 border border-gray-800 card-hover">
+                <div key={index} class="bg-white rounded-xl p-8 border border-gray-200 card-hover shadow-sm">
                   <div class="flex items-start gap-4 mb-6">
                     <div class="text-5xl flex-shrink-0">{method.icon}</div>
                     <div class="flex-grow">
-                      <h3 class="text-2xl font-bold text-white mb-2">{method.name}</h3>
-                      <p class="text-gray-400">{method.description}</p>
+                      <h3 class="text-2xl font-bold text-gray-800 mb-2">{method.name}</h3>
+                      <p class="text-gray-500">{method.description}</p>
                     </div>
                   </div>
 
-                  <div class="flex items-center gap-6 mb-6 pb-6 border-b border-gray-800">
+                  <div class="flex items-center gap-6 mb-6 pb-6 border-b border-gray-200">
                     <div>
-                      <div class="text-sm text-gray-400 mb-1">Koszt</div>
-                      <div class="text-2xl font-bold text-neon-violet">{method.price}</div>
+                      <div class="text-sm text-gray-500 mb-1">Koszt</div>
+                      <div class="text-2xl font-bold text-primary">{method.price}</div>
                     </div>
                     <div>
-                      <div class="text-sm text-gray-400 mb-1">Czas dostawy</div>
-                      <div class="text-lg font-semibold text-white flex items-center gap-2">
+                      <div class="text-sm text-gray-500 mb-1">Czas dostawy</div>
+                      <div class="text-lg font-semibold text-gray-800 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -108,8 +108,8 @@ export default function DeliveryPage() {
 
                   <ul class="space-y-3">
                     {method.features.map((feature, i) => (
-                      <li key={i} class="flex items-start gap-3 text-gray-300">
-                        <span class="text-neon-violet mt-1">✓</span>
+                      <li key={i} class="flex items-start gap-3 text-gray-600">
+                        <span class="text-primary mt-1">✓</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -131,41 +131,41 @@ export default function DeliveryPage() {
         </section>
 
         {/* Additional Info */}
-        <section class="py-16 bg-gray-900">
+        <section class="py-16 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 class="text-3xl font-bold text-white mb-8 text-center">Dodatkowe informacje</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Dodatkowe informacje</h2>
 
             <div class="space-y-6">
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
-                <h3 class="text-xl font-semibold text-white mb-3">📦 Czas realizacji zamowienia</h3>
-                <p class="text-gray-300">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">📦 Czas realizacji zamowienia</h3>
+                <p class="text-gray-600">
                   Zamowienia zlozone do godziny 14:00 wysylamy tego samego dnia roboczego.
                   Zamowienia zlozone po tej godzinie wysylamy nastepnego dnia roboczego.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
-                <h3 class="text-xl font-semibold text-white mb-3">🔍 Sledzenie przesylki</h3>
-                <p class="text-gray-300">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">🔍 Sledzenie przesylki</h3>
+                <p class="text-gray-600">
                   Po nadaniu przesylki otrzymasz numer sledzenia na podany adres e-mail.
                   Bedziesz mogl sprawdzic status dostawy w dowolnym momencie.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
-                <h3 class="text-xl font-semibold text-white mb-3">🌍 Wysylka miedzynarodowa</h3>
-                <p class="text-gray-300">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">🌍 Wysylka miedzynarodowa</h3>
+                <p class="text-gray-600">
                   Obecnie obslugujemy wysylke tylko na terenie Polski.
                   Planujemy wkrotce rozszerzyc nasza oferte o dostawy miedzynarodowe.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
-                <h3 class="text-xl font-semibold text-white mb-3">📞 Kontakt</h3>
-                <p class="text-gray-300">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">📞 Kontakt</h3>
+                <p class="text-gray-600">
                   Masz pytania dotyczace dostawy? Skontaktuj sie z nami:
                   <br />
-                  📧 <a href="mailto:dostawa@technest.pl" class="text-neon-violet hover:text-electric-blue">dostawa@technest.pl</a>
+                  📧 <a href="mailto:dostawa@technest.pl" class="text-primary hover:text-secondary">dostawa@technest.pl</a>
                   <br />
                   📞 +48 123 456 789
                 </p>

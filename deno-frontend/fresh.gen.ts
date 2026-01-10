@@ -15,6 +15,7 @@ import * as $polityka_prywatnosci from "./routes/polityka-prywatnosci.tsx";
 import * as $produkty from "./routes/produkty.tsx";
 import * as $produkty_slug_ from "./routes/produkty/[slug].tsx";
 import * as $regulamin from "./routes/regulamin.tsx";
+import * as $BannerCarousel from "./islands/BannerCarousel.tsx";
 import * as $NewsletterPopup from "./islands/NewsletterPopup.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -35,6 +36,7 @@ const manifest = {
     "./routes/regulamin.tsx": $regulamin,
   },
   islands: {
+    "./islands/BannerCarousel.tsx": $BannerCarousel,
     "./islands/NewsletterPopup.tsx": $NewsletterPopup,
   },
   baseUrl: import.meta.url,

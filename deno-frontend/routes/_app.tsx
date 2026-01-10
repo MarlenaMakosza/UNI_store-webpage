@@ -10,7 +10,7 @@ export default function App({ Component }: PageProps) {
         <meta name="description" content="Twoj sklep z elektronika najwyzszej jakosci. Oferujemy szeroka game produktow w konkurencyjnych cenach." />
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body class="bg-deep-black text-white min-h-screen">
+      <body class="bg-gray-50 text-gray-800 min-h-screen">
         <Component />
       </body>
     </html>

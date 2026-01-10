@@ -42,9 +42,9 @@ export default function PaymentsPage() {
 
   return (
     <Layout>
-      <div class="min-h-screen bg-deep-black">
+      <div class="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section class="relative bg-gradient-to-br from-deep-black via-gray-900 to-deep-black py-16 md:py-24">
+        <section class="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-16 md:py-24">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center">
               <div class="inline-flex items-center justify-center w-20 h-20 btn-gradient rounded-full mb-6">
@@ -53,7 +53,7 @@ export default function PaymentsPage() {
               <h1 class="text-4xl md:text-5xl font-bold mb-6">
                 <span class="gradient-text">Platnosci</span>
               </h1>
-              <p class="text-xl text-gray-300">
+              <p class="text-xl text-gray-600">
                 Bezpieczne i wygodne metody platnosci
               </p>
             </div>
@@ -65,14 +65,14 @@ export default function PaymentsPage() {
           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {paymentMethods.map((method, index) => (
-                <div key={index} class="bg-gray-900 rounded-xl p-6 border border-gray-800 card-hover">
+                <div key={index} class="bg-white rounded-xl p-6 border border-gray-200 card-hover shadow-sm">
                   <div class="text-5xl mb-4">{method.icon}</div>
-                  <h3 class="text-xl font-bold text-white mb-2">{method.name}</h3>
-                  <p class="text-gray-400 text-sm mb-4">{method.description}</p>
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">{method.name}</h3>
+                  <p class="text-gray-500 text-sm mb-4">{method.description}</p>
                   <ul class="space-y-2">
                     {method.features.map((feature, i) => (
-                      <li key={i} class="flex items-center gap-2 text-gray-300 text-sm">
-                        <span class="text-neon-violet">✓</span>
+                      <li key={i} class="flex items-center gap-2 text-gray-600 text-sm">
+                        <span class="text-primary">✓</span>
                         {feature}
                       </li>
                     ))}
@@ -97,39 +97,39 @@ export default function PaymentsPage() {
         </section>
 
         {/* Security Info */}
-        <section class="py-16 bg-gray-900">
+        <section class="py-16 bg-white">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 class="text-3xl font-bold text-white mb-8 text-center">Bezpieczenstwo platnosci</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Bezpieczenstwo platnosci</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <div class="text-3xl mb-4">🔒</div>
-                <h3 class="text-xl font-semibold text-white mb-3">Szyfrowanie SSL</h3>
-                <p class="text-gray-300">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Szyfrowanie SSL</h3>
+                <p class="text-gray-600">
                   Wszystkie transakcje sa szyfrowane protokolem SSL, co gwarantuje pelne bezpieczenstwo Twoich danych.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <div class="text-3xl mb-4">🛡️</div>
-                <h3 class="text-xl font-semibold text-white mb-3">Certyfikat PCI DSS</h3>
-                <p class="text-gray-300">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Certyfikat PCI DSS</h3>
+                <p class="text-gray-600">
                   Nasz operator platnosci posiada certyfikat PCI DSS, spelniajacy najwyzsze standardy bezpieczenstwa.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <div class="text-3xl mb-4">✅</div>
-                <h3 class="text-xl font-semibold text-white mb-3">3D Secure</h3>
-                <p class="text-gray-300">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">3D Secure</h3>
+                <p class="text-gray-600">
                   Obslugujemy platnosci z dodatkowa autoryzacja 3D Secure dla jeszcze wiekszego bezpieczenstwa.
                 </p>
               </div>
 
-              <div class="bg-deep-black rounded-lg p-6 border border-gray-800">
+              <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <div class="text-3xl mb-4">💰</div>
-                <h3 class="text-xl font-semibold text-white mb-3">Gwarancja zwrotu</h3>
-                <p class="text-gray-300">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Gwarancja zwrotu</h3>
+                <p class="text-gray-600">
                   W przypadku problemow z zamowieniem gwarantujemy szybki zwrot pieniedzy na Twoje konto.
                 </p>
               </div>

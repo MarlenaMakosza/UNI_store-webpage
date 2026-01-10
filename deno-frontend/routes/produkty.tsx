@@ -3,10 +3,10 @@ import { products } from "../data/products.ts";
 
 function ProductCard({ product }: { product: typeof products[0] }) {
   return (
-    <a href={`/produkty/${product.slug}`} class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 card-hover block">
-      <div class="h-48 bg-gradient-to-br from-neon-violet/20 to-electric-blue/20 flex items-center justify-center relative">
+    <a href={`/produkty/${product.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
+      <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center relative">
         {product.isNew && (
-          <span class="absolute top-3 left-3 px-2 py-1 bg-electric-blue text-white text-xs font-bold rounded">NOWOSC</span>
+          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded">NOWOSC</span>
         )}
         {product.oldPrice && (
           <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">PROMOCJA</span>
@@ -16,14 +16,14 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         </span>
       </div>
       <div class="p-4">
-        <span class="text-xs text-neon-violet font-semibold uppercase">{product.category}</span>
-        <h3 class="text-lg font-bold text-white mt-1 line-clamp-1">{product.name}</h3>
-        <p class="text-sm text-gray-400 mt-1 line-clamp-2">{product.description}</p>
+        <span class="text-xs text-primary font-semibold uppercase">{product.category}</span>
+        <h3 class="text-lg font-bold text-gray-800 mt-1 line-clamp-1">{product.name}</h3>
+        <p class="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
         <div class="flex items-center justify-between mt-4">
           <div>
-            <span class="text-xl font-bold text-white">{product.price.toFixed(2)} zl</span>
+            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zl</span>
             {product.oldPrice && (
-              <span class="ml-2 text-sm text-gray-500 line-through">{product.oldPrice.toFixed(2)} zl</span>
+              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zl</span>
             )}
           </div>
           <button class="px-4 py-2 rounded-lg btn-gradient text-white text-sm font-semibold">
@@ -38,10 +38,10 @@ function ProductCard({ product }: { product: typeof products[0] }) {
 export default function ProductsPage() {
   return (
     <Layout>
-      <div class="min-h-screen bg-deep-black py-8">
+      <div class="min-h-screen bg-gray-50 py-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-8">
-            <h1 class="text-4xl font-bold text-white mb-4">Produkty</h1>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Produkty</h1>
 
             <form class="max-w-md">
               <div class="flex gap-2">
@@ -52,7 +52,7 @@ export default function ProductsPage() {
                   <input
                     type="search"
                     placeholder="Szukaj produktow..."
-                    class="w-full pl-12 pr-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-violet transition-colors"
+                    class="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
                 <button type="submit" class="px-4 py-3 rounded-lg btn-gradient text-white">

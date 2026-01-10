@@ -1,88 +1,19 @@
 import Layout from "../components/Layout.tsx";
 import { products, getFeaturedProducts } from "../data/products.ts";
 import NewsletterPopup from "../islands/NewsletterPopup.tsx";
-
-function BannerCarousel() {
-  const banners = [
-    {
-      id: 1,
-      badge: "HOT DEAL",
-      title: "POWER UP YOUR",
-      highlight: "GEAR!",
-      text: "Zgarnij do -30% na myszki, klawiatury i sluchawki gamingowe",
-      cta: "Kup teraz",
-      href: "/produkty",
-    },
-    {
-      id: 2,
-      badge: "0% OPROCENTOWANIA",
-      title: "KUP TERAZ PLAC",
-      highlight: "POZNIEJ",
-      text: "Odroczona platnosc do 12 miesiecy bez dodatkowych kosztow",
-      cta: "Zobacz warunki",
-      href: "/platnosci",
-    },
-    {
-      id: 3,
-      badge: "DARMOWA USLUGA",
-      title: "DOSTAWA",
-      highlight: "GRATIS!",
-      text: "Darmowy transport + wniesienie przy zakupach powyzej 500 zl",
-      cta: "Sprawdz oferte",
-      href: "/produkty",
-    },
-  ];
-
-  return (
-    <section class="py-8 md:py-12 bg-deep-black">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-deep-black border border-gray-800 p-8 md:p-16">
-          <div class="absolute w-96 h-96 rounded-full -top-48 -right-24 bg-neon-violet/10 blur-3xl pointer-events-none" />
-          <div class="absolute w-64 h-64 rounded-full -bottom-32 -left-16 bg-electric-blue/10 blur-3xl pointer-events-none" />
-
-          <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="flex-1 text-center md:text-left max-w-xl">
-              <span class="inline-block px-4 py-2 rounded-full text-sm font-bold text-white btn-gradient mb-4">
-                {banners[0].badge}
-              </span>
-              <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
-                <span class="text-white">{banners[0].title} </span>
-                <span class="gradient-text">{banners[0].highlight}</span>
-              </h2>
-              <p class="text-gray-300 text-lg mb-6">{banners[0].text}</p>
-              <a href={banners[0].href} class="inline-block px-8 py-4 rounded-full text-white font-bold btn-gradient">
-                {banners[0].cta} &rarr;
-              </a>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              {["Myszki", "Klawiatury", "Sluchawki", "Monitory"].map((item) => (
-                <div class="w-32 h-32 rounded-xl bg-gray-800/50 border border-gray-700 flex flex-col items-center justify-center gap-2 hover:border-neon-violet transition-colors">
-                  <div class="w-12 h-12 rounded-lg btn-gradient flex items-center justify-center text-2xl">
-                    {item === "Myszki" ? "🎮" : item === "Klawiatury" ? "⌨️" : item === "Sluchawki" ? "🎧" : "🖥️"}
-                  </div>
-                  <span class="text-xs font-semibold text-white uppercase">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+import BannerCarousel from "../islands/BannerCarousel.tsx";
 
 function HeroSection() {
   return (
-    <section class="relative bg-gradient-to-br from-deep-black via-gray-900 to-deep-black py-20 md:py-32">
+    <section class="relative bg-gradient-to-br from-purple-50 via-white to-blue-50 py-20 md:py-32">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-6xl font-bold mb-6">
             <span class="gradient-text">Elektronika</span>
             <br />
-            <span class="text-white">najwyzszej jakosci</span>
+            <span class="text-gray-800">najwyzszej jakosci</span>
           </h1>
-          <p class="text-xl text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 mb-8">
             Odkryj najnowsze produkty z swiata elektroniki w konkurencyjnych cenach.
             Gwarantujemy wysoka jakosc i szybka dostawe.
           </p>
@@ -100,10 +31,10 @@ function HeroSection() {
 
 function ProductCard({ product }: { product: typeof products[0] }) {
   return (
-    <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 card-hover">
-      <div class="h-48 bg-gradient-to-br from-neon-violet/20 to-electric-blue/20 flex items-center justify-center relative">
+    <div class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover shadow-sm">
+      <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center relative">
         {product.isNew && (
-          <span class="absolute top-3 left-3 px-2 py-1 bg-electric-blue text-white text-xs font-bold rounded">NOWOŚĆ</span>
+          <span class="absolute top-3 left-3 px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded">NOWOSC</span>
         )}
         {product.oldPrice && (
           <span class="absolute top-3 right-3 px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">PROMOCJA</span>
@@ -113,14 +44,14 @@ function ProductCard({ product }: { product: typeof products[0] }) {
         </span>
       </div>
       <div class="p-4">
-        <span class="text-xs text-neon-violet font-semibold uppercase">{product.category}</span>
-        <h3 class="text-lg font-bold text-white mt-1 line-clamp-1">{product.name}</h3>
-        <p class="text-sm text-gray-400 mt-1 line-clamp-2">{product.description}</p>
+        <span class="text-xs text-primary font-semibold uppercase">{product.category}</span>
+        <h3 class="text-lg font-bold text-gray-800 mt-1 line-clamp-1">{product.name}</h3>
+        <p class="text-sm text-gray-500 mt-1 line-clamp-2">{product.description}</p>
         <div class="flex items-center justify-between mt-4">
           <div>
-            <span class="text-xl font-bold text-white">{product.price.toFixed(2)} zl</span>
+            <span class="text-xl font-bold text-gray-800">{product.price.toFixed(2)} zl</span>
             {product.oldPrice && (
-              <span class="ml-2 text-sm text-gray-500 line-through">{product.oldPrice.toFixed(2)} zl</span>
+              <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zl</span>
             )}
           </div>
           <button class="px-4 py-2 rounded-lg btn-gradient text-white text-sm font-semibold">
@@ -136,11 +67,11 @@ function FeaturedProducts() {
   const featured = getFeaturedProducts().slice(0, 8);
 
   return (
-    <section class="py-16 bg-deep-black">
+    <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold text-white">Wyroznione produkty</h2>
-          <a href="/produkty" class="inline-flex items-center px-4 py-2 rounded-lg border border-gray-700 text-gray-300 hover:border-neon-violet hover:text-neon-violet transition-colors">
+          <h2 class="text-3xl font-bold text-gray-800">Wyroznione produkty</h2>
+          <a href="/produkty" class="inline-flex items-center px-4 py-2 rounded-lg border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-colors">
             Zobacz wszystkie
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -162,13 +93,13 @@ function RecommendedSection() {
   const recommended = products.slice(0, 4);
 
   return (
-    <section class="py-16 bg-gray-900">
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4">
             <span class="gradient-text">Polecane dla Ciebie</span>
           </h2>
-          <p class="text-gray-400">Automatycznie dobrane produkty dostosowane do Twoich potrzeb</p>
+          <p class="text-gray-500">Automatycznie dobrane produkty dostosowane do Twoich potrzeb</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -183,7 +114,7 @@ function RecommendedSection() {
 
 function NewsletterSection() {
   return (
-    <section class="py-16 bg-gray-800">
+    <section class="py-16 bg-gradient-to-r from-purple-100 to-blue-100">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mx-auto text-center">
           <div class="inline-flex items-center justify-center w-16 h-16 btn-gradient rounded-full mb-6">
@@ -192,11 +123,11 @@ function NewsletterSection() {
             </svg>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Badz na biezaco
           </h2>
 
-          <p class="text-gray-300 mb-8">
+          <p class="text-gray-600 mb-8">
             Zapisz sie do naszego newslettera i otrzymuj informacje o nowosciach,
             promocjach i ekskluzywnych ofertach prosto na swoja skrzynke.
           </p>
@@ -210,7 +141,7 @@ function NewsletterSection() {
                 <input
                   type="email"
                   placeholder="Twoj adres e-mail"
-                  class="w-full pl-12 pr-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-neon-violet transition-colors"
+                  class="w-full pl-12 pr-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
               <button type="submit" class="px-6 py-3 rounded-lg btn-gradient text-white font-semibold">
@@ -229,9 +160,9 @@ function NewsletterSection() {
 
 function WhyUsSection() {
   return (
-    <section class="py-16 bg-deep-black">
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-white text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">
           Dlaczego my?
         </h2>
 
@@ -240,24 +171,24 @@ function WhyUsSection() {
             <div class="w-16 h-16 btn-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
               <span class="text-2xl">📦</span>
             </div>
-            <h3 class="text-xl font-semibold text-white mb-2">Szybka dostawa</h3>
-            <p class="text-gray-400">Realizujemy zamowienia w 24 godziny</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Szybka dostawa</h3>
+            <p class="text-gray-500">Realizujemy zamowienia w 24 godziny</p>
           </div>
 
           <div class="text-center">
             <div class="w-16 h-16 btn-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
               <span class="text-2xl">✓</span>
             </div>
-            <h3 class="text-xl font-semibold text-white mb-2">Gwarancja jakosci</h3>
-            <p class="text-gray-400">Wszystkie produkty objete gwarancja producenta</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Gwarancja jakosci</h3>
+            <p class="text-gray-500">Wszystkie produkty objete gwarancja producenta</p>
           </div>
 
           <div class="text-center">
             <div class="w-16 h-16 btn-gradient rounded-full mx-auto mb-4 flex items-center justify-center">
               <span class="text-2xl">💳</span>
             </div>
-            <h3 class="text-xl font-semibold text-white mb-2">Bezpieczne platnosci</h3>
-            <p class="text-gray-400">Akceptujemy wszystkie najpopularniejsze metody platnosci</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Bezpieczne platnosci</h3>
+            <p class="text-gray-500">Akceptujemy wszystkie najpopularniejsze metody platnosci</p>
           </div>
         </div>
       </div>
