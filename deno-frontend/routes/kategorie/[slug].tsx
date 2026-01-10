@@ -98,7 +98,7 @@ export default function CategoryPage(props: PageProps) {
                           <span class="ml-2 text-sm text-gray-400 line-through">{product.oldPrice.toFixed(2)} zł</span>
                         )}
                       </div>
-                      <button class="px-4 py-2 rounded-lg btn-gradient text-white text-sm font-semibold">
+                      <button disabled class="px-4 py-2 rounded-lg bg-gray-300 text-gray-500 text-sm font-semibold cursor-not-allowed">
                         Do koszyka
                       </button>
                     </div>

@@ -100,8 +100,8 @@ export default function ProductPage(props: PageProps) {
               </div>
 
               <div class="flex gap-4">
-                <button class="flex-1 px-6 py-4 rounded-lg btn-gradient text-white font-semibold text-lg">
-                  Dodaj do koszyka
+                <button disabled class="flex-1 px-6 py-4 rounded-lg bg-gray-300 text-gray-500 font-semibold text-lg cursor-not-allowed">
+                  Do koszyka
                 </button>
                 <button class="px-6 py-4 rounded-lg border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-colors">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
