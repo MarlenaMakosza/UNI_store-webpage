@@ -17,7 +17,7 @@ const banners: Banner[] = [
     badge: "🔥 HOT DEAL",
     title: "POWER UP YOUR ",
     highlight: "GEAR!",
-    text: "Zgarnij do -30% na myszki, klawiatury i sluchawki gamingowe",
+    text: "Zgarnij do -30% na myszki, klawiatury i słuchawki gamingowe",
     cta: "Kup teraz →",
     href: "/produkty",
     type: "gaming",
@@ -25,20 +25,20 @@ const banners: Banner[] = [
   {
     id: 2,
     badge: "💳 0% OPROCENTOWANIA",
-    title: "KUP TERAZ PLAC ",
-    highlight: "POZNIEJ",
-    text: "Odroczona platnosc do 12 miesiecy bez dodatkowych kosztow",
+    title: "KUP TERAZ PŁAĆ ",
+    highlight: "PÓŹNIEJ",
+    text: "Odroczona płatność do 12 miesięcy bez dodatkowych kosztów",
     cta: "Zobacz warunki →",
     href: "/platnosci",
     type: "payment",
   },
   {
     id: 3,
-    badge: "🚚 DARMOWA USLUGA",
+    badge: "🚚 DARMOWA USŁUGA",
     title: "DOSTAWA ",
     highlight: "GRATIS!",
-    text: "Darmowy transport + wniesienie przy zakupach powyzej 500 zl",
-    cta: "Sprawdz oferte →",
+    text: "Darmowy transport + wniesienie przy zakupach powyżej 500 zł",
+    cta: "Sprawdź ofertę →",
     href: "/produkty",
     type: "delivery",
   },
@@ -48,7 +48,7 @@ function GamingVisual() {
   const categories = [
     { icon: "🎮", label: "Myszki" },
     { icon: "⌨️", label: "Klawiatury" },
-    { icon: "🎧", label: "Sluchawki" },
+    { icon: "🎧", label: "Słuchawki" },
     { icon: "🖥️", label: "Monitory" },
   ];
 
@@ -99,7 +99,7 @@ function PaymentVisual() {
         </div>
         <div class="flex justify-between text-white text-lg">
           <div>
-            <div class="text-sm lg:text-base opacity-90">WAZNA DO</div>
+            <div class="text-sm lg:text-base opacity-90">WAŻNA DO</div>
             <div class="font-semibold text-xl">12/27</div>
           </div>
           <div class="text-right">
@@ -116,7 +116,7 @@ function DeliveryVisual() {
   const items = [
     { icon: "🚚", label: "Darmowy Transport" },
     { icon: "🏠", label: "Wniesienie do domu" },
-    { icon: "✅", label: "Calkowicie Gratis" },
+    { icon: "✅", label: "Całkowicie Gratis" },
   ];
 
   return (
@@ -300,7 +300,7 @@ export default function BannerCarousel() {
             }}
             class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full btn-gradient text-white flex items-center justify-center hover:scale-110 transition-transform duration-300 z-20"
             style={{ boxShadow: "0 4px 15px rgba(138, 43, 226, 0.4)" }}
-            aria-label="Nastepny slajd"
+            aria-label="Następny slajd"
           >
             <svg
               class="w-5 h-5 md:w-6 md:h-6"
@@ -328,7 +328,7 @@ export default function BannerCarousel() {
                     ? "w-10 btn-gradient"
                     : "w-3 bg-gray-300 hover:bg-gray-400"
                 }`}
-                aria-label={`Przejdz do slajdu ${index + 1}`}
+                aria-label={`Przejdź do slajdu ${index + 1}`}
               />
             ))}
           </div>

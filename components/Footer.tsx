@@ -10,8 +10,8 @@ export default function Footer() {
               TechNest
             </h3>
             <p class="text-gray-600 text-sm">
-              Twoj sklep z elektronika najwyzszej jakosci.
-              Oferujemy szeroka game produktow w konkurencyjnych cenach.
+              Twój sklep z elektroniką najwyższej jakości.
+              Oferujemy szeroką gamę produktów w konkurencyjnych cenach.
             </p>
           </div>
 
@@ -20,7 +20,7 @@ export default function Footer() {
             <ul class="space-y-2">
               <li>
                 <a href="/" class="text-gray-600 hover:text-primary text-sm transition-colors">
-                  Strona glowna
+                  Strona główna
                 </a>
               </li>
               <li>
@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/platnosci" class="text-gray-600 hover:text-primary text-sm transition-colors">
-                  Platnosci
+                  Płatności
                 </a>
               </li>
               <li>
@@ -66,7 +66,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/polityka-prywatnosci" class="text-gray-600 hover:text-primary text-sm transition-colors">
-                  Polityka prywatnosci
+                  Polityka prywatności
                 </a>
               </li>
             </ul>
@@ -82,14 +82,14 @@ export default function Footer() {
               </li>
               <li class="text-gray-600 text-sm">Email: kontakt@technest.pl</li>
               <li class="text-gray-600 text-sm">Telefon: +48 123 456 789</li>
-              <li class="text-gray-600 text-sm">Adres: ul. Przykladowa 1, Warszawa</li>
+              <li class="text-gray-600 text-sm">Adres: ul. Przykładowa 1, Warszawa</li>
             </ul>
           </div>
         </div>
 
         <div class="border-t border-gray-200 mt-8 pt-8 text-center">
           <p class="text-gray-500 text-sm">
-            &copy; {currentYear} TechNest. Wszelkie prawa zastrzezone.
+            &copy; {currentYear} TechNest. Wszelkie prawa zastrzeżone.
           </p>
         </div>
       </div>

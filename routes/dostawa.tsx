@@ -5,25 +5,25 @@ export default function DeliveryPage() {
     {
       icon: "🚚",
       name: "Kurier InPost",
-      price: "14,99 zl",
+      price: "14,99 zł",
       time: "1-2 dni robocze",
       description: "Dostawa pod wskazany adres",
       features: [
-        "Sledzenie przesylki online",
+        "Śledzenie przesyłki online",
         "Powiadomienia SMS",
-        "Dostawa od poniedzialku do piatku",
-        "Mozliwosc wyboru godzin dostawy",
+        "Dostawa od poniedziałku do piątku",
+        "Możliwość wyboru godzin dostawy",
       ],
     },
     {
       icon: "📦",
       name: "Paczkomat InPost",
-      price: "11,99 zl",
+      price: "11,99 zł",
       time: "1-2 dni robocze",
-      description: "Odbior z paczkomatu 24/7",
+      description: "Odbiór z paczkomatu 24/7",
       features: [
-        "Ponad 20 000 paczkomatow w Polsce",
-        "Odbior w dowolnym momencie",
+        "Ponad 20 000 paczkomatów w Polsce",
+        "Odbiór w dowolnym momencie",
         "Powiadomienie SMS o dostawie",
         "Bezpieczne przechowanie przez 48h",
       ],
@@ -31,27 +31,27 @@ export default function DeliveryPage() {
     {
       icon: "📍",
       name: "Poczta Polska",
-      price: "13,99 zl",
+      price: "13,99 zł",
       time: "2-3 dni robocze",
-      description: "Tradycyjna przesylka pocztowa",
+      description: "Tradycyjna przesyłka pocztowa",
       features: [
-        "Dostawa do skrzynki pocztowej lub oddzialu",
-        "Szeroka siec placowek",
-        "Mozliwosc pobrania",
-        "Ubezpieczenie przesylki",
+        "Dostawa do skrzynki pocztowej lub oddziału",
+        "Szeroka sieć placówek",
+        "Możliwość pobrania",
+        "Ubezpieczenie przesyłki",
       ],
     },
     {
       icon: "🏠",
-      name: "Odbior osobisty",
+      name: "Odbiór osobisty",
       price: "Gratis",
       time: "Tego samego dnia",
       description: "Odbierz w naszym sklepie",
       features: [
-        "Brak kosztow dostawy",
-        "Mozliwosc sprawdzenia towaru",
+        "Brak kosztów dostawy",
+        "Możliwość sprawdzenia towaru",
         "Pomoc przy wyborze produktu",
-        "Warszawa, ul. Przykladowa 123",
+        "Warszawa, ul. Przykładowa 123",
       ],
     },
   ];
@@ -70,7 +70,7 @@ export default function DeliveryPage() {
                 <span class="gradient-text">Dostawa</span>
               </h1>
               <p class="text-xl text-gray-600">
-                Wybierz najwygodniejsza dla Ciebie metode dostawy
+                Wybierz najwygodniejszą dla Ciebie metodę dostawy
               </p>
             </div>
           </div>
@@ -123,9 +123,9 @@ export default function DeliveryPage() {
         {/* Free Shipping Banner */}
         <section class="py-12 btn-gradient">
           <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Darmowa dostawa od 150 zl!</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">Darmowa dostawa od 150 zł!</h2>
             <p class="text-white text-lg opacity-90">
-              Przy zamowieniach powyzej 150 zl dostawa kurierem InPost jest calkowicie bezplatna
+              Przy zamówieniach powyżej 150 zł dostawa kurierem InPost jest całkowicie bezpłatna
             </p>
           </div>
         </section>
@@ -137,33 +137,33 @@ export default function DeliveryPage() {
 
             <div class="space-y-6">
               <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">📦 Czas realizacji zamowienia</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">📦 Czas realizacji zamówienia</h3>
                 <p class="text-gray-600">
-                  Zamowienia zlozone do godziny 14:00 wysylamy tego samego dnia roboczego.
-                  Zamowienia zlozone po tej godzinie wysylamy nastepnego dnia roboczego.
+                  Zamówienia złożone do godziny 14:00 wysyłamy tego samego dnia roboczego.
+                  Zamówienia złożone po tej godzinie wysyłamy następnego dnia roboczego.
                 </p>
               </div>
 
               <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">🔍 Sledzenie przesylki</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">🔍 Śledzenie przesyłki</h3>
                 <p class="text-gray-600">
-                  Po nadaniu przesylki otrzymasz numer sledzenia na podany adres e-mail.
-                  Bedziesz mogl sprawdzic status dostawy w dowolnym momencie.
+                  Po nadaniu przesyłki otrzymasz numer śledzenia na podany adres e-mail.
+                  Będziesz mógł sprawdzić status dostawy w dowolnym momencie.
                 </p>
               </div>
 
               <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">🌍 Wysylka miedzynarodowa</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">🌍 Wysyłka międzynarodowa</h3>
                 <p class="text-gray-600">
-                  Obecnie obslugujemy wysylke tylko na terenie Polski.
-                  Planujemy wkrotce rozszerzyc nasza oferte o dostawy miedzynarodowe.
+                  Obecnie obsługujemy wysyłkę tylko na terenie Polski.
+                  Planujemy wkrótce rozszerzyć naszą ofertę o dostawy międzynarodowe.
                 </p>
               </div>
 
               <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <h3 class="text-xl font-semibold text-gray-800 mb-3">📞 Kontakt</h3>
                 <p class="text-gray-600">
-                  Masz pytania dotyczace dostawy? Skontaktuj sie z nami:
+                  Masz pytania dotyczące dostawy? Skontaktuj się z nami:
                   <br />
                   📧 <a href="mailto:dostawa@technest.pl" class="text-primary hover:text-secondary">dostawa@technest.pl</a>
                   <br />

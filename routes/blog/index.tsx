@@ -24,7 +24,7 @@ export default function BlogPage() {
                 <span class="gradient-text">Blog TechNest</span>
               </h1>
               <p class="text-xl text-gray-600">
-                Najnowsze artykuly, promocje i nowosci ze swiata elektroniki
+                Najnowsze artykuły, promocje i nowości ze świata elektroniki
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function BlogPage() {
                       href={`/blog/${article.slug}`}
                       class="inline-flex items-center text-primary hover:text-secondary font-semibold transition-colors"
                     >
-                      Czytaj wiecej
+                      Czytaj więcej
                       <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
