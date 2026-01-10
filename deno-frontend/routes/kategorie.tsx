@@ -34,7 +34,13 @@ export default function CategoriesPage() {
                   >
                     <div class="h-48 bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
                       <span class="text-7xl group-hover:scale-110 transition-transform">
-                        {category.slug === "myszki" ? "🖱️" : category.slug === "klawiatury" ? "⌨️" : category.slug === "sluchawki" ? "🎧" : "🖥️"}
+                        {category.slug === "myszki" ? "🖱️" :
+                         category.slug === "klawiatury" ? "⌨️" :
+                         category.slug === "sluchawki" ? "🎧" :
+                         category.slug === "monitory" ? "🖥️" :
+                         category.slug === "tablety" ? "📱" :
+                         category.slug === "akcesoria" ? "🎮" :
+                         category.slug === "bezpieczenstwo" ? "🔐" : "📦"}
                       </span>
                     </div>
                     <div class="p-6">

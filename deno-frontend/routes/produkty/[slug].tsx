@@ -31,9 +31,9 @@ export default function ProductPage(props: PageProps) {
           {/* Breadcrumb */}
           <nav class="mb-8">
             <ol class="flex items-center space-x-2 text-sm">
-              <li><a href="/" class="text-gray-500 hover:text-primary">Strona główna</a></li>
-              <li class="text-gray-400">/</li>
               <li><a href="/produkty" class="text-gray-500 hover:text-primary">Produkty</a></li>
+              <li class="text-gray-400">/</li>
+              <li><a href={`/kategorie/${product.categorySlug}`} class="text-gray-500 hover:text-primary">{product.category}</a></li>
               <li class="text-gray-400">/</li>
               <li class="text-primary font-medium">{product.name}</li>
             </ol>
