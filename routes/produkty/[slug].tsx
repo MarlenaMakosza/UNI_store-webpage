@@ -22,7 +22,14 @@ export default function ProductPage(props: PageProps) {
     );
   }
 
-  const relatedProducts = products.filter(p => p.categorySlug === product.categorySlug && p.id !== product.id).slice(0, 4);
+  // Crossselling - jeśli produkt ma relatedProducts, użyj ich, w przeciwnym razie użyj podobnych z kategorii
+  const relatedProducts = product.relatedProducts && product.relatedProducts.length > 0
+    ? products.filter(p => product.relatedProducts!.includes(p.slug))
+    : products.filter(p => p.categorySlug === product.categorySlug && p.id !== product.id).slice(0, 4);
+
+  const relatedTitle = product.relatedProducts && product.relatedProducts.length > 0
+    ? "Może też potrzebujesz"
+    : "Podobne produkty";
 
   return (
     <Layout>
@@ -50,7 +57,6 @@ export default function ProductPage(props: PageProps) {
                     {product.categorySlug === "myszki" ? "🖱️" :
                      product.categorySlug === "klawiatury" ? "⌨️" :
                      product.categorySlug === "sluchawki" ? "🎧" :
-                     product.categorySlug === "monitory" ? "🖥️" :
                      product.categorySlug === "tablety" ? "📱" :
                      product.categorySlug === "akcesoria" ? "🎮" :
                      product.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}
@@ -192,7 +198,7 @@ export default function ProductPage(props: PageProps) {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <section class="mt-16">
-              <h2 class="text-2xl font-bold text-gray-800 mb-8">Podobne produkty</h2>
+              <h2 class="text-2xl font-bold text-gray-800 mb-8">{relatedTitle}</h2>
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((p) => (
                   <a key={p.id} href={`/produkty/${p.slug}`} class="bg-white rounded-xl overflow-hidden border border-gray-200 card-hover block shadow-sm">
@@ -204,7 +210,6 @@ export default function ProductPage(props: PageProps) {
                           {p.categorySlug === "myszki" ? "🖱️" :
                            p.categorySlug === "klawiatury" ? "⌨️" :
                            p.categorySlug === "sluchawki" ? "🎧" :
-                           p.categorySlug === "monitory" ? "🖥️" :
                            p.categorySlug === "tablety" ? "📱" :
                            p.categorySlug === "akcesoria" ? "🎮" :
                            p.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}

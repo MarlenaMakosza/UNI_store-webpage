@@ -45,7 +45,6 @@ export default function CategoryPage(props: PageProps) {
                   {category.slug === "myszki" ? "🖱️" :
                    category.slug === "klawiatury" ? "⌨️" :
                    category.slug === "sluchawki" ? "🎧" :
-                   category.slug === "monitory" ? "🖥️" :
                    category.slug === "tablety" ? "📱" :
                    category.slug === "akcesoria" ? "🎮" :
                    category.slug === "bezpieczenstwo" ? "🔐" : "📦"}
@@ -81,7 +80,6 @@ export default function CategoryPage(props: PageProps) {
                         {product.categorySlug === "myszki" ? "🖱️" :
                          product.categorySlug === "klawiatury" ? "⌨️" :
                          product.categorySlug === "sluchawki" ? "🎧" :
-                         product.categorySlug === "monitory" ? "🖥️" :
                          product.categorySlug === "tablety" ? "📱" :
                          product.categorySlug === "akcesoria" ? "🎮" :
                          product.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}

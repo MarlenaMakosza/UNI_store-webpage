@@ -18,7 +18,6 @@ function ProductCard({ product }: { product: typeof products[0] }) {
             {product.categorySlug === "myszki" ? "🖱️" :
              product.categorySlug === "klawiatury" ? "⌨️" :
              product.categorySlug === "sluchawki" ? "🎧" :
-             product.categorySlug === "monitory" ? "🖥️" :
              product.categorySlug === "tablety" ? "📱" :
              product.categorySlug === "akcesoria" ? "🎮" :
              product.categorySlug === "bezpieczenstwo" ? "🔐" : "📦"}

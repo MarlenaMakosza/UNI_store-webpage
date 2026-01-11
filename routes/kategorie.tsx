@@ -37,7 +37,6 @@ export default function CategoriesPage() {
                         {category.slug === "myszki" ? "🖱️" :
                          category.slug === "klawiatury" ? "⌨️" :
                          category.slug === "sluchawki" ? "🎧" :
-                         category.slug === "monitory" ? "🖥️" :
                          category.slug === "tablety" ? "📱" :
                          category.slug === "akcesoria" ? "🎮" :
                          category.slug === "bezpieczenstwo" ? "🔐" : "📦"}

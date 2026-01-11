@@ -32,7 +32,7 @@ export default function ContactPage() {
                       <span class="text-2xl font-bold text-white">MM</span>
                     </div>
                     <div>
-                      <p class="font-semibold text-gray-800">Marlena Makosza</p>
+                      <p class="font-semibold text-gray-800">Marlena Mąkosza</p>
                       <p class="text-sm text-gray-500">Dział obsługi klienta</p>
                     </div>
                   </div>

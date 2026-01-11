@@ -28,6 +28,7 @@ export interface Product {
   categorySlug: string;
   isNew?: boolean;
   isFeatured?: boolean;
+  relatedProducts?: string[]; // slugi produktów do crosssellingu
 }
 
 export const products: Product[] = [
@@ -77,15 +78,15 @@ export const products: Product[] = [
     ],
     price: 1299.99,
     oldPrice: 1599.99,
-    image: "/products/tablet/front.JPG",
+    image: "/products/tablet/tablet_white_ front_on_screen.png",
     images: [
-      "/products/tablet/front.JPG",
-      "/products/tablet/back.png",
       "/products/tablet/tablet_white_ front_on_screen.png",
-      "/products/tablet/accessories3.JPG",
+      "/products/tablet/back.png",
+      "/products/tablet/front.JPG",
       "/products/tablet/contrast.jpg",
       "/products/tablet/usbc.jpg",
       "/products/tablet/plec_2.JPG",
+      "/products/tablet/accessories3.JPG",
     ],
     category: "Tablety",
     categorySlug: "tablety",
@@ -152,6 +153,7 @@ export const products: Product[] = [
     category: "Klawiatury",
     categorySlug: "klawiatury",
     isFeatured: true,
+    relatedProducts: ["logitech-mx-master-3s"],
   },
   {
     id: 3,
@@ -376,30 +378,80 @@ export const products: Product[] = [
     ],
     price: 449.99,
     oldPrice: 549.99,
-    image: "/products/mouse/DSCN0257_2.jpg",
+    image: "/products/mouse/IMG_20250601_092731.jpg",
     images: [
-      "/products/mouse/DSCN0257_2.jpg",
-      "/products/mouse/DSCN0262.jpg",
-      "/products/mouse/IMG_20250601_092640.jpg",
       "/products/mouse/IMG_20250601_092731.jpg",
       "/products/mouse/IMG_20250601_092738.jpg",
+      "/products/mouse/IMG_20250601_092640.jpg",
       "/products/mouse/IMG_20250601_092822.jpg",
+      "/products/mouse/DSCN0262.jpg",
+      "/products/mouse/DSCN0257_2.jpg",
     ],
     category: "Myszki",
     categorySlug: "myszki",
     isFeatured: true,
+    relatedProducts: ["logitech-mx-mechanical"],
   },
   {
-    id: 7,
-    slug: "samsung-odyssey-g5-27",
-    name: "Samsung Odyssey G5 27\"",
-    description: "Monitor gamingowy 144Hz WQHD z zakrzywionym ekranem",
-    price: 1299.99,
-    oldPrice: 1499.99,
-    image: "/images/monitor.svg",
-    category: "Monitory",
-    categorySlug: "monitory",
+    id: 8,
+    slug: "xiaomi-redmi-buds-6-active",
+    name: "Xiaomi Redmi Buds 6 Active",
+    description: "Bezprzewodowe słuchawki z Bluetooth 5.4 i długim czasem pracy",
+    fullDescription: {
+      intro: "Szukasz lekkich, wygodnych słuchawek bezprzewodowych, które sprawdzą się zarówno w drodze na uczelnię, podczas pracy, jak i w trakcie treningu? Xiaomi Redmi Buds 6 Active to idealne rozwiązanie dla osób, które chcą połączyć dobrą jakość dźwięku, niezawodną łączność i długi czas pracy w przystępnej cenie.",
+      sections: [
+        {
+          title: "Dynamiczny dźwięk, który dotrzyma Ci kroku",
+          content: "Wyposażone w 14,2-milimetrowe przetworniki dynamiczne, Redmi Buds 6 Active oferują wyraźne wokale, zbalansowane tony średnie i przyjemnie podkreślony bas. To brzmienie, które sprawdzi się zarówno przy słuchaniu podcastów, jak i ulubionej muzyki w drodze czy podczas spaceru."
+        },
+        {
+          title: "Stabilne połączenie Bluetooth 5.4",
+          content: "Nowoczesna technologia Bluetooth 5.4 zapewnia szybkie parowanie, niskie opóźnienia i stabilne połączenie z telefonem, tabletem czy laptopem. Bez zrywania dźwięku i bez irytujących przerw – po prostu zakładasz słuchawki i słuchasz."
+        },
+        {
+          title: "Czyste rozmowy, gdziekolwiek jesteś",
+          content: "Wbudowany mikrofon z redukcją szumów skutecznie eliminuje hałasy z otoczenia, dzięki czemu rozmowy telefoniczne są wyraźne nawet w miejskim zgiełku. Idealne rozwiązanie do szybkich rozmów w biegu lub spotkań online."
+        },
+        {
+          title: "Długi czas pracy – nawet do 28 godzin",
+          content: "Na jednym ładowaniu słuchawki działają do 6 godzin, a etui ładujące wydłuża ten czas aż do 28 godzin. To wystarczająco dużo energii na cały dzień słuchania – bez stresu o ładowarkę."
+        },
+        {
+          title: "Lekka i wygodna konstrukcja",
+          content: "Ergonomiczny kształt i niewielka waga sprawiają, że Redmi Buds 6 Active wygodnie leżą w uszach nawet podczas dłuższego użytkowania. Możesz nosić je godzinami – bez uczucia zmęczenia."
+        },
+        {
+          title: "Odporność na zachlapania (IPX4)",
+          content: "Deszcz, pot czy intensywny trening nie są problemem. Dzięki certyfikatowi IPX4 słuchawki świetnie sprawdzą się podczas aktywności fizycznej i codziennego użytkowania."
+        }
+      ],
+      outro: "Xiaomi Redmi Buds 6 Active – prostota, która działa. To słuchawki stworzone z myślą o codziennym komforcie i niezawodności. Bez zbędnych dodatków, za to z solidnym dźwiękiem, długim czasem pracy i wygodą, której oczekujesz od marki Xiaomi. Jeśli szukasz uniwersalnych słuchawek true wireless do wszystkiego – Redmi Buds 6 Active będą trafnym wyborem."
+    },
+    specs: [
+      { label: "Typ przetworników", value: "Dynamiczne 14,2 mm" },
+      { label: "Łączność", value: "Bluetooth 5.4" },
+      { label: "Zasięg", value: "Do 10 metrów" },
+      { label: "Czas pracy słuchawek", value: "Do 6 godzin" },
+      { label: "Czas pracy z etui", value: "Do 28 godzin" },
+      { label: "Ładowanie", value: "USB-C" },
+      { label: "Mikrofon", value: "Z redukcją szumów" },
+      { label: "Odporność", value: "IPX4 (zachlapania)" },
+      { label: "Waga słuchawki", value: "~4 g" },
+      { label: "Kompatybilność", value: "Android, iOS, Windows" }
+    ],
+    price: 79.99,
+    image: "/products/redmi-buds-6-active/MVIMG_20260111_104444.jpg",
+    images: [
+      "/products/redmi-buds-6-active/MVIMG_20260111_104444.jpg",
+      "/products/redmi-buds-6-active/MVIMG_20260111_104504.jpg",
+      "/products/redmi-buds-6-active/MVIMG_20260111_104525.jpg",
+      "/products/redmi-buds-6-active/MVIMG_20260111_104556.jpg",
+      "/products/redmi-buds-6-active/MVIMG_20260111_104609.jpg",
+    ],
+    category: "Słuchawki",
+    categorySlug: "sluchawki",
     isFeatured: true,
+    isNew: true,
   },
 ];
 
