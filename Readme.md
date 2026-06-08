@@ -2,6 +2,8 @@
 
 A university project. A fictional electronics e-commerce storefront — full frontend with no backend or database.
 
+> Last updated: January 2026
+
 ## Tech stack
 
 | Technology | Role |
