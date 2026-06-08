@@ -24,7 +24,7 @@ export const articles: Article[] = [
     category: "O nas",
     featuredImage: "chart",
     mediaType: "image",
-    mediaFile: "/articles/technest-infografika.png",
+    mediaFile: "/articles/technest-infografika.webp",
   },
   {
     id: 2,
