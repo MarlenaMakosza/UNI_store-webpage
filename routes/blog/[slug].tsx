@@ -67,14 +67,11 @@ export default function ArticlePage(props: PageProps) {
             {article.mediaType === "video" && article.mediaFile ? (
               // Video article
               <div class="max-w-4xl mx-auto">
-                <video
-                  controls
-                  class="w-full rounded-2xl shadow-2xl"
-                  poster=""
-                >
-                  <source src={article.mediaFile} type="video/mp4" />
-                  Twoja przegladarka nie wspiera odtwarzania wideo.
-                </video>
+                <div class="w-full rounded-2xl shadow-2xl bg-gray-100 flex flex-col items-center justify-center py-16 px-8 text-center">
+                  <span class="text-5xl mb-4">🎬</span>
+                  <p class="text-xl font-semibold text-gray-700 mb-2">Film niedostępny</p>
+                  <p class="text-gray-500">Ze względu na ograniczenia hostingu materiał wideo nie jest obecnie dostępny. Przepraszamy za utrudnienia.</p>
+                </div>
               </div>
             ) : article.mediaType === "image" && article.mediaFile ? (
               // Image/Infographic article
