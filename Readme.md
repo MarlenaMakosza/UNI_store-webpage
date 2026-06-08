@@ -1,25 +1,55 @@
+# TechNest — Electronics Store
 
-  PM2 to process manager, który jest super do Deno też:
+A university project. A fictional electronics e-commerce storefront — full frontend with no backend or database.
 
-  # Zainstaluj PM2
-  npm install -g pm2
+## Tech stack
 
-  # Uruchom serwer Deno z PM2
-  pm2 start --name technest "deno task dev"
+| Technology | Role |
+|---|---|
+| [Deno](https://deno.land/) | Runtime (instead of Node.js) |
+| [Fresh 1.7](https://fresh.deno.dev/) | Fullstack framework — SSR + islands architecture |
+| [Preact](https://preactjs.com/) | UI (lightweight React alternative, 3KB) |
+| [Tailwind CSS 3](https://tailwindcss.com/) | Styling |
+| TypeScript | Everywhere |
 
-  # Albo bezpośrednio:
-  pm2 start --name technest --interpreter deno -- run --allow-all dev.ts
+## Features
 
-  # Przydatne komendy:
-  pm2 list              # Lista procesów
-  pm2 logs technest     # Logi na żywo
-  pm2 restart technest  # Restart
-  pm2 stop technest     # Stop
-  pm2 delete technest   # Usuń
+- Home page with product listing
+- Product catalog with category filtering
+- Product detail page with image gallery
+- Blog (text articles and infographics)
+- Info pages: shipping, payments, contact, terms, privacy policy
 
-  # Auto-start przy restarcie VPSa:
-  pm2 startup
-  pm2 save
+Product and article data stored statically in `data/`.
 
-  # Monitoring:
-  pm2 monit
+## Running locally
+
+Requirements: [Deno](https://deno.land/#installation) 1.40+
+
+```bash
+deno task dev
+```
+
+App available at `http://localhost:8000`.
+
+## Other commands
+
+```bash
+deno task build    # production build
+deno task start    # run production build
+deno task check    # format + lint + type check
+```
+
+## Project structure
+
+```
+routes/       # pages (Fresh file-based routing)
+components/   # shared UI components
+islands/      # interactive components (Preact on client)
+data/         # static product and article data
+static/       # images and styles
+```
+
+## Note on AI assistance
+
+Parts of this project were developed with the assistance of AI tools (Claude by Anthropic). All code was reviewed, understood, and integrated by the author.
